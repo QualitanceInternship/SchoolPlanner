@@ -4,6 +4,7 @@ angular.module('schoolPlannerApp')
   .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};
+    
 
     $scope.register = function(form) {
       $scope.submitted = true;
@@ -35,3 +36,5 @@ angular.module('schoolPlannerApp')
       $window.location.href = '/auth/' + provider;
     };
   });
+
+
