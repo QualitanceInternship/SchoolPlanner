@@ -1,12 +1,22 @@
 'use strict';
 
 angular.module('schoolPlannerApp', [
+<<<<<<< HEAD
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
   'ngMaterial'
+=======
+ 'ngCookies',
+ 'ngResource',
+ 'ngSanitize',
+ 'btford.socket-io',
+ 'ui.router',
+ 'ngMessages',
+ 'ngMaterial'
+>>>>>>> 05d61ca8fcdc7f68fe436482f0c3914cc6e0e5ac
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
