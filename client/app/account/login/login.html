@@ -4,22 +4,20 @@
   <div class="row">
     <div class="col-sm-12">
       <h1>Login</h1>
-      <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-      <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="login(form)" novalidate>
 
         <div class="form-group">
-          <label>Email</label>
-
-          <input type="email" name="email" class="form-control" ng-model="user.email" required>
-        </div>
+           <md-input-container >
+            <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+          </md-input-container>
+       </div>
 
         <div class="form-group">
-          <label>Password</label>
-
-          <input type="password" name="password" class="form-control" ng-model="user.password" required>
+           <md-input-container class="md-icon-float" >
+             <input ng-model="user.password" type="password" placeholder="Password" ng-required="true">
+            </md-input-container>
         </div>
 
         <div class="form-group has-error">
@@ -34,12 +32,8 @@
         </div>
 
         <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Login
-          </button>
-          <a class="btn btn-default btn-lg btn-register" href="/signup">
-            Register
-          </a>
+            <md-button class="md-raised" type="submit">Login</md-button>
+            <md-button class="md-raised" href="/signup">Register</md-button>
         </div>
 
         <hr>
@@ -59,3 +53,6 @@
   </div>
   <hr>
 </div>
+
+
+
