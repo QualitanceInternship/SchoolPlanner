@@ -9,3 +9,4 @@ angular.module('schoolPlannerApp')
         controller: 'MainCtrl'
       });
   });
+  

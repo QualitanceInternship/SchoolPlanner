@@ -1,4 +1,4 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<!-- <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
   <div class="row">
@@ -40,6 +40,78 @@
           <a class="btn btn-default btn-lg btn-register" href="/signup">
             Register
           </a>
+        </div>
+
+        <hr>
+        <div>
+          <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
+            <i class="fa fa-facebook"></i> Connect with Facebook
+          </a>
+          <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
+            <i class="fa fa-google-plus"></i> Connect with Google+
+          </a>
+          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
+            <i class="fa fa-twitter"></i> Connect with Twitter
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>
+ -->
+
+
+<!-- <div layout="column">
+  <br/>
+  <md-content layout-padding class="autoScroll">
+    <md-input-container > -->
+      <!-- Use floating placeholder instead of label -->
+     <!--  <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+    </md-input-container>
+        <md-input-container class="md-icon-float" > -->
+      <!-- Use floating label instead of placeholder -->
+      <!-- <label>Password</label>
+      <input type="password" name="password" class="form-control" ng-model="user.password" required>
+    </md-input-container>
+  </md-content>
+  <section layout="row" layout-sm="column" layout-align="center center">
+    <form class="form" name="form" ng-submit="login(form)" novalidate>
+     <md-button class="md-raised" type="submit">Login</md-button>
+      </section>
+</div> -->
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Login</h1>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="login(form)" novalidate>
+
+        <div class="form-group">
+           <md-input-container >
+            <input ng-model="user.email" type="email" name="email" placeholder="Email (required)" ng-required="true">
+            <div ng-messages="form.email.$error">
+                <div ng-message="required">Email required.</div>
+                <div ng-message="email">Invalid email.</div>
+            </div>
+          </md-input-container>
+       </div>
+
+        <div class="form-group">
+           <md-input-container class="md-icon-float" >
+             <input ng-model="user.password" name="password" type="password" placeholder="Password" ng-required="true">
+              <div ng-messages="form.password.$error">
+                  <div ng-message="required">Password required.</div>
+              </div>
+            </md-input-container>
+        </div>
+
+        <div>
+            <md-button class="md-raised" type="submit">Login</md-button>
+            <md-button class="md-raised" href="/signup">Sign Up</md-button>
         </div>
 
         <hr>
