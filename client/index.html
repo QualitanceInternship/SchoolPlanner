@@ -26,13 +26,19 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="schoolPlannerApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <body ng-app="schoolPlannerApp" layout = "row">
 
+  <div ng-include="'components/sidebar/sidebar.html'"></div>
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <div ng-include="'components/navbar/navbar.html'"></div>
     <!-- Add your site or application content here -->
     <div ui-view=""></div>
+  </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -83,6 +89,7 @@
           <script src="components/auth/user.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/sidebar/sidebar.controller.js"></script>
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
