@@ -7,7 +7,8 @@ angular.module('schoolPlannerApp', [
   'btford.socket-io',
   'ui.router',
   'ngMaterial',
-  'ngMessages'
+  'ngMessages',
+  'ui.calendar', 
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

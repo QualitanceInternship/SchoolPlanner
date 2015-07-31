@@ -13,6 +13,11 @@ angular.module('schoolPlannerApp')
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupCtrl'
       })
+      .state('calendar', {
+        url: '/calendar',
+        templateUrl: 'app/account/calendar/calendar.html',
+        controller: 'CalendarCtrl'
+      })
       .state('settings', {
         url: '/settings',
         templateUrl: 'app/account/settings/settings.html',
