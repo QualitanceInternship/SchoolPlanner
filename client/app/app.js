@@ -8,8 +8,7 @@ angular.module('schoolPlannerApp', [
   'ui.router',
   'ngMaterial',
   'ngMessages',
-  'ui.calendar', 
-  
+  'ui.calendar',
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

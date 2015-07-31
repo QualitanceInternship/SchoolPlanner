@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 angular.module('schoolPlannerApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
@@ -27,3 +27,5 @@ angular.module('schoolPlannerApp')
       $window.location.href = '/auth/' + provider;
     };
   });
+
+
