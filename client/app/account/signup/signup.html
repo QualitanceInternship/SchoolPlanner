@@ -1,10 +1,10 @@
 
-<div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+
+<div class="container" style="padding-left: 100px">
   <div class="row">
     <div class="col-sm-12">
-      <h1>Sign up</h1>
+      <h1 align="center">Sign up</h1>
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
@@ -15,7 +15,7 @@
                 </div>
               </md-input-container>
 
-                
+                <br>
               <md-input-container>
                 <input ng-model="user.email" type="email" name="email" placeholder="Email" ng-required="true">
                 <div ng-messages="form.email.$error">
@@ -24,7 +24,7 @@
                 </div>
               </md-input-container>
                   
-                 
+                 <br>
               <md-input-container>
                 <!-- Use floating label instead of placeholder -->
                 <input ng-model="user.password" type="password" placeholder="Password" ng-required="true" name="password">
@@ -33,23 +33,11 @@
                 </div>
               </md-input-container>
 
-                  <div>
+                  <div align="center">
                     <md-button class="md-raised" type="submit">Sign up</md-button>
                     <md-button class="md-raised" href="/login">Login</md-button>
                   </div>
 
-                  <hr>
-                  <div>
-                    <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
-                      <i class="fa fa-facebook"></i> Connect with Facebook
-                    </a>
-                    <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
-                      <i class="fa fa-google-plus"></i> Connect with Google+
-                    </a>
-                    <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
-                      <i class="fa fa-twitter"></i> Connect with Twitter
-                    </a>
-                  </div>
       </form>
     </div>
   </div>

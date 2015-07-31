@@ -1,0 +1,71 @@
+
+<header>
+<h1 align="center"> Add subject </h1>
+</header>
+
+<body>
+<div style="padding:50px;">
+<div layout="column">
+  <md-content>
+    <md-input-container>
+      <label>Faculty</label>
+      <input ng-model="faculty" type="text">
+    </md-input-container>
+    </md-content>
+    <md-content>
+    <md-input-container>
+      <label>Year</label>
+      <input ng-model="year" type="text">
+    </md-input-container>
+</md-content>
+  
+  <md-content layout-padding>
+    <form name="userForm">
+      
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Series</label>
+          <input ng-model="serie" type="text">
+        </md-input-container>
+      </div>
+      <md-input-container flex>
+        <label>Subject Name</label>
+        <input ng-model="name" type="text">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Teacher</label>
+        <input ng-model="teacher" type="text">
+      </md-input-container>
+      <!-- <h3 align="center"> Schegule </h3>
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Weeks</label>
+          <input ng-model="subject.weeks">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Days</label>
+          <input ng-model="subject.days">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Hours</label>
+          <input ng-model="subject.hour">
+        </md-input-container>
+      </div> -->
+     <div>
+      <!-- <md-input-container flex>
+          <label>Classroom</label>
+      <input ng-model="subject.classroom">
+     </div> -->
+      <!-- <md-input-container flex>
+        <label>Details</label>
+        <textarea ng-model="subject.details" columns="1" md-maxlength="150"></textarea>
+      </md-input-container> -->
+    </form>
+  </md-content>
+</div>
+<div align="center">
+<md-button ng-click="addSubjects()" class="md-accent" type="submit">Save</md-button>
+</div>
+</div>
+</body>
+

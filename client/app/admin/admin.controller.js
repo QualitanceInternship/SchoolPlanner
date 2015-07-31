@@ -5,7 +5,8 @@ angular.module('schoolPlannerApp')
 
     // Use the User $resource to fetch all users
     $scope.users = User.query();
-
+    $scope.isAdmin = Auth.isAdmin; 
+    
     $scope.delete = function(user) {
       User.remove({ id: user._id });
       angular.forEach($scope.users, function(u, i) {
