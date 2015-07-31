@@ -30,7 +30,12 @@
   </head>
   <body ng-app="schoolPlannerApp" layout = "row">
 
-  <div ng-include="'components/sidebar/sidebar.html'"></div>
+  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+            md-component-id="left" ng-controller = 'SidenavCtrl'
+            md-is-locked-open="$mdMedia('gt-sm')" ng-include="'components/sidebar/sidebar.html'">
+
+   
+</md-sidenav>
 
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
