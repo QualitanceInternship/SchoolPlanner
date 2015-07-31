@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Event = require('../api/event/event.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -46,4 +47,38 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+});
+
+Event.find({}).remove(function() {
+  Event.create({
+  professor: 'Lucian Stanciu',  
+  date: new Date,
+  subject: 'IEM',
+  eventType: 'curs',
+  year: 4,  
+  group: '442A',
+  series: 'A',
+  faculty: 'ETTI'
+},
+{
+  professor: 'Burileanu',  
+  date: new Date,
+  subject: 'AMP',
+  eventType: 'curs',
+  year: 2,  
+  group: '421B',
+  series: 'B',
+  faculty: 'ETTI'
+},
+{
+  professor: 'Petrescu',  
+  date: new Date,
+  subject: 'Microunde',
+  eventType: 'curs',
+  year: 3,  
+  group: '431D',
+  series: 'D',
+  faculty: 'ETTI'
+});
+
 });

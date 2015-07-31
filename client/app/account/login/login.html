@@ -61,13 +61,20 @@
 
         <div class="form-group">
            <md-input-container>
-            <input ng-model="user.email" type="email" placeholder="Email (required)" required >
+            <input ng-model="user.email" type="email" placeholder="Email (required)" required name="email" >
+             <div ng-show="form.$dirty" ng-messages="form.email.$error">
+                  <div ng-message="required">Email required.</div>
+                  <div ng-message="email">Invalid email.</div>
+                </div>
           </md-input-container>
        </div>
 
         <div class="form-group">
            <md-input-container class="md-icon-float" >
-             <input ng-model="user.password" type="password" placeholder="Password" required>
+             <input ng-model="user.password" type="password" placeholder="Password" required name="password">
+             <div ng-show="form.$dirty" ng-messages="form.password.$error">
+                  <div ng-message="required">Password required.</div>
+                </div>
             </md-input-container>
         </div>
 
@@ -76,25 +83,14 @@
 
         <div>
             <md-button class="md-raised" type="submit">Login</md-button>
-            <md-button class="md-raised" href="/signup">Register</md-button>
+            
         </div>
 
-        <hr>
-        <div>
-          <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
-            <i class="fa fa-facebook"></i> Connect with Facebook
-          </a>
-          <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
-            <i class="fa fa-google-plus"></i> Connect with Google+
-          </a>
-          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
-            <i class="fa fa-twitter"></i> Connect with Twitter
-          </a>
-        </div>
+        
       </form>
     </div>
   </div>
-  <hr>
+ 
 </div>
 
 
