@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
             md-component-id="left"
             md-is-locked-open="$mdMedia('gt-sm')">
@@ -13,15 +14,82 @@
     </md-list-item>
     <md-list-item>
         Oriceverea
+=======
+ <md-toolbar class="md-whiteframe-z1" >
+        <h2>Menu</h2>
+    </md-toolbar>
+
+<div align = "center">
+<md-menu>
+      <md-button ng-click="$mdOpenMenu()">
+      Faculties
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="clickfn()" align = "center">
+            Scheduel
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="clickfn()">
+            University
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="clickfn()">
+            Students
+          </md-button>
+        </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+  </div>
+
+   <!--  </md-list-item>
+    
+    <md-list-item ng-click = 'clickfn()'>
+        Studenti
+>>>>>>> 6f124db68509cf64c07286c8b85052ed11c30722
+    </md-list-item>
+    <md-list-item ng-click = 'clickfn()'>
+         An 
     </md-list-item>
     <md-list-item>
-        Oriceea
-    </md-list-item>
-    <md-list-item>
-        Oricedsa
+         Materii
     </md-list-item>
     <md-list-item>
     
     </md-list-item>
-</md-list>
-</md-sidenav>
+ -->
+
+    <!-- <menu-toggle section="child" ng-if="child.type === 'toggle'" class="ng-scope ng-isolate-scope">
+        <button class="md-button-toggle md-button md-default-theme" tabindex="0" ng-click="toggle()">
+          <div flex="" layout="row" >
+            CSS
+            <span flex=""></span>
+            <span  class="md-toggle-icon" ng-class="{'toggled' : true}">
+              <md-icon md-svg-src="md-toggle-arrow" >
+            </span>
+          </div>
+          <span class="md-visually-hidden">
+            Toggle expanded
+          </span>
+        </button>
+
+        <ul id="docs-menu-CSS" class="menu-toggle-list" style="height: 80px;">
+          <!-- ngRepeat: page in section.pages
+          <li ng-repeat="page in section.pages">
+            <menu-link section="page" >
+                Typography
+            </menu-link>
+          </li><!-- end ngRepeat: page in section.pages -->
+         <!--  <li ng-repeat="page in section.pages">
+            <menu-link section="page">
+                <span>
+                  Button
+                </span><!-- ngIf: isSelected() -->
+           <!--  </menu-link>
+          </li>end ngRepeat: page in section.pages
+        </ul>
+    </menu-toggle> --> 
+</li>
+</ul>

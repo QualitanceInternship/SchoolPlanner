@@ -12,7 +12,11 @@ module.exports = function(app) {
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
+<<<<<<< HEAD
   app.use('/api/subjects', require('./api/subject'));
+=======
+  app.use('/api/events', require('./api/event'));
+>>>>>>> 6f124db68509cf64c07286c8b85052ed11c30722
 
   app.use('/auth', require('./auth'));
   

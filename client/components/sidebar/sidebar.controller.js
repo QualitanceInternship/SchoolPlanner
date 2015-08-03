@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('schoolPlannerApp')
+<<<<<<< HEAD
   .controller('SidebarCtrl', function ($scope, $location, Auth, $mdSidenav) {
     $scope.menu = [{
       'title': 'Home',
@@ -26,3 +27,18 @@ angular.module('schoolPlannerApp')
       return route === $location.path();
     };
   });
+=======
+  .controller('SidenavCtrl', function ($scope, $location, Auth) {
+    $scope.child = {};
+    $scope.child.type ='toggle';
+
+$scope.clickfn=function(){
+	var x = 2;
+}
+$scope.toggle=function(){
+	$scope.toggled = true;
+}
+  });
+
+  
+>>>>>>> 6f124db68509cf64c07286c8b85052ed11c30722
