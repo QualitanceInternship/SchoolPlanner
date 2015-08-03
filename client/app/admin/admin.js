@@ -8,11 +8,15 @@ angular.module('schoolPlannerApp')
         templateUrl: 'app/admin/admin.html',
         controller: 'AdminCtrl'
       })
-
-      .state('formular', {
-        url: '/formular',
-        templateUrl: 'app/admin/formular/formular.html',
-        controller: 'FormCtrl'
+      .state('addsubject', {
+        url: '/addsubject',
+        templateUrl: 'app/admin/addsubject/addSubject.html',
+        controller: 'AddSubjectCtrl'
       })
+      .state('listSubjects', {
+        url: '/listSubjects',
+        templateUrl: 'app/admin/listSubjects/listSubjects.html',
+        controller: 'ListSubjCtrl'
+      });
 
   });

@@ -1,0 +1,32 @@
+<div ng-controller="ListSubjCtrl">
+    <div align="center">
+    	<h1>List Subjects</h1>
+    </div>
+
+
+<md-toolbar class="md-theme-light">
+    <h2 class="md-toolbar-tools">
+      <span>Subjects</span>
+    </h2>
+  </md-toolbar>
+     <md-content>
+      <md-list>
+      <md-list-item class="md-3-line" ng-repeat="subject in allSubjects">
+          <div class="md-list-item-text">
+          Subject:{{ subject.name}}-----------Year: {{subject.year}}---------------Serie:{{subject.serie}}---------------Faculty:{{subject.faculty}}-----------------------Teacher:{{subject.teacher}}------------------------
+           <md-button class="md-warn" ng-click="deleteSubject(subject)" >Delete</md-button>
+           </div>
+           <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+       
+      </md-list>
+  <md-content>
+   </div>
+
+ </div>
+</div>
+
+
+ 
+
+

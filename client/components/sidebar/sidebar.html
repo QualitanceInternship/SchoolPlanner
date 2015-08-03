@@ -1,27 +1,41 @@
-<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-            md-component-id="left"
-            md-is-locked-open="$mdMedia('gt-sm')">
 
-    <md-toolbar class="md-whiteframe-z1"   >
-        <h4>Menu</h4>
+ <md-toolbar class="md-whiteframe-z1" >
+        <h2>Menu</h2>
     </md-toolbar>
-<md-list ng-controller="SidebarCtrl">
-    <md-list-item ng-show="isAdmin()">
+
+<div align = "center">
+  <md-list-item ng-if="isAdmin()">
     
-       <md-button href="/formular" class="md-raised">Add subject</md-button>
+       <md-button href="/addsubject" class="md-raised">Add subject</md-button>
     
-    </md-list-item>
-    <md-list-item>
-        Oriceverea
-    </md-list-item>
-    <md-list-item>
-        Oriceea
-    </md-list-item>
-    <md-list-item>
-        Oricedsa
-    </md-list-item>
-    <md-list-item>
+  </md-list-item>
+  <md-list-item ng-if="isAdmin()">
     
-    </md-list-item>
-</md-list>
-</md-sidenav>
+       <md-button href="/listSubjects" class="md-raised">List Subjects</md-button>
+    
+  </md-list-item>
+<!-- <md-menu>
+  
+  <md-button ng-click="$mdOpenMenu()">
+  Faculties
+  </md-button>
+  <md-menu-content width="4">
+    <md-menu-item>
+      <md-button ng-click="clickfn()" align = "center">
+        Scheduel
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button ng-click="clickfn()">
+        University
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button ng-click="clickfn()">
+        Students
+      </md-button>
+    </md-menu-item>
+    </md-menu-content>
+    </md-menu> -->
+</div>
+  
