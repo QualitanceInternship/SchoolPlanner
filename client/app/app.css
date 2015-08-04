@@ -32,3 +32,18 @@
         max-width: 730px;
     }
 }
+
+
+.container {
+   position: relative;
+   display: block;
+   margin: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #ebeff2 ;
+}
+
+.container_bg {
+   background: url('http://www.nimbusnine.co/content/3-partners/3-developers/header/00-developers.jpg') no-repeat center center fixed;
+   background-size: cover;
+}
