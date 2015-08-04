@@ -9,6 +9,11 @@ var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 var Event = require('../api/event/event.model');
 
+var date = new Date();
+var d = date.getDate();
+var m = date.getMonth();
+var y = date.getFullYear();
+
 Thing.find({}).remove(function() {
   Thing.create({
     name : 'Development Tools',
@@ -52,8 +57,9 @@ User.find({}).remove(function() {
 Event.find({}).remove(function() {
   Event.create({
   professor: 'Lucian Stanciu',  
-  date: new Date,
-  subject: 'IEM',
+  start: new Date(y, m, d, 13, 0),
+  end: new Date(y, m, d, 15, 0),
+  title: 'IEM',
   eventType: 'curs',
   year: 4,  
   group: '442A',
@@ -62,8 +68,9 @@ Event.find({}).remove(function() {
 },
 {
   professor: 'Burileanu',  
-  date: new Date,
-  subject: 'AMP',
+  start: new Date(y, m, d - 5, 13, 0),
+  end: new Date(y, m, d - 5, 15, 0),
+  title: 'AMP',
   eventType: 'curs',
   year: 2,  
   group: '421B',
@@ -72,8 +79,9 @@ Event.find({}).remove(function() {
 },
 {
   professor: 'Petrescu',  
-  date: new Date,
-  subject: 'Microunde',
+  start: new Date(y, m, d - 2, 13, 0),
+  end: new Date(y, m, d - 2, 15, 0),
+  title: 'Microunde',
   eventType: 'curs',
   year: 3,  
   group: '431D',

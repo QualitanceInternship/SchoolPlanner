@@ -5,8 +5,9 @@ var mongoose = require('mongoose'),
 
 var EventSchema = new Schema({
   professor: String,  
-  date: { type: Date, default: Date.now },
-  subject: String,
+  start: { type: Date, default: Date.now },
+  end: { type: Date},
+  title: String,
   eventType: String,
   year: { type: Number },  
   group: String,
