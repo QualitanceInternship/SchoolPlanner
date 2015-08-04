@@ -7,7 +7,9 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
-var Event = require('../api/event/event.model');
+var Faculty = require('../api/faculty/faculty.model');
+var Subject = require('../api/subject/subject.model');
+var University = require('../api/university/university.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -31,54 +33,68 @@ Thing.find({}).remove(function() {
   });
 });
 
+
+University.find({}).remove(function() {
+  University.create({
+    name : 'Universitatea Politehnica Bucuresti',
+  }, {
+    name : 'Academia de Studii Economice',
+  }, {
+    name : 'Universitatea de Arhitectura si Urbanism "Ion Mincu" din Bucuresti',
+  },  {
+    name : 'Universitatea "Spiru Haret" din Bucuresti',
+  },  {
+    name : 'Universitatea "Hyperion" din Bucuresti',
+
+  });
+});
+
+Faculty.find({}).remove(function() {
+  Faculty.create({
+    name : 'Electronica Telecomunicatii si Tehnologia Informatiei',
+    department : ''
+  }, {
+    name : 'Cibernetică, Statistică şi Informatică Economică',
+    department : ''
+  }, {
+    name : 'Facultatea de Urbanism',
+    department : ''
+  },  {
+    name : 'Drept si Administratie Publica',
+    department : ''
+  },  {
+    name : 'Facultatea de Arte',
+    department : ''
+  });
+});
+
 User.find({}).remove(function() {
   User.create({
-    provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
-    password: 'test'
-  }, {
-    provider: 'local',
-    role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
-    password: 'admin'
-  }, function() {
-      console.log('finished populating users');
-    }
+        provider: 'local',
+        role: 'admin',
+        name: 'Admin',
+        email: 'admin@admin.com',
+        password: 'admin'
+      },{
+        provider: 'local',
+        role: 'professor',
+        name: 'Professor',
+        email: 'professor@professor.com',
+        password: 'professor'
+      },{
+        provider: 'local',
+        role: 'student',
+        name: 'Student',
+        email: 'student@student.com',
+        password: 'student'
+      },{
+        provider: 'local',
+        role: 'user',
+        name: 'User',
+        email: 'user@user.com',
+        password: 'user'
+      }, function() {
+        console.log('finished populating users');
+      }
   );
-});
-
-Event.find({}).remove(function() {
-  Event.create({
-  professor: 'Lucian Stanciu',  
-  date: new Date,
-  subject: 'IEM',
-  eventType: 'curs',
-  year: 4,  
-  group: '442A',
-  series: 'A',
-  faculty: 'ETTI'
-},
-{
-  professor: 'Burileanu',  
-  date: new Date,
-  subject: 'AMP',
-  eventType: 'curs',
-  year: 2,  
-  group: '421B',
-  series: 'B',
-  faculty: 'ETTI'
-},
-{
-  professor: 'Petrescu',  
-  date: new Date,
-  subject: 'Microunde',
-  eventType: 'curs',
-  year: 3,  
-  group: '431D',
-  series: 'D',
-  faculty: 'ETTI'
-});
-
 });
