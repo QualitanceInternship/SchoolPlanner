@@ -36,16 +36,15 @@ Thing.find({}).remove(function() {
 
 University.find({}).remove(function() {
   University.create({
-    name : 'Universitatea Politehnica Bucuresti',
+    name : 'Universitatea Politehnica Bucuresti'
   }, {
-    name : 'Academia de Studii Economice',
+    name : 'Academia de Studii Economice'
   }, {
-    name : 'Universitatea de Arhitectura si Urbanism "Ion Mincu" din Bucuresti',
+    name : 'Universitatea de Arhitectura si Urbanism "Ion Mincu" din Bucuresti'
   },  {
-    name : 'Universitatea "Spiru Haret" din Bucuresti',
+    name : 'Universitatea "Spiru Haret" din Bucuresti'
   },  {
-    name : 'Universitatea "Hyperion" din Bucuresti',
-
+    name : 'Universitatea "Hyperion" din Bucuresti'
   });
 });
 
