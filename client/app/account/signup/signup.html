@@ -1,5 +1,5 @@
 
-<div class="container" style="padding-left: 100px">
+<!-- <div class="container" style="padding-left: 100px">
   <div class="row">
     <div class="col-sm-12">
       <h1 align="center">Sign up</h1>
@@ -24,8 +24,8 @@
                   
                  <br>
               <md-input-container>
-                <!-- Use floating label instead of placeholder -->
-                <input ng-model="user.password" type="password" placeholder="Password" ng-required="true" name="password">
+                <! Use floating label instead of placeholder -->
+                <!-- <input ng-model="user.password" type="password" placeholder="Password" ng-required="true" name="password">
                 <div ng-show="form.$dirty" ng-messages="form.password.$error">
                   <div ng-message="required">Password required.</div>
                 </div>
@@ -39,4 +39,47 @@
     </div>
   </div>
  
+</div> --> 
+
+<div class="container" style="padding-left: 100px">
+ <div class="row">
+   <div class="col-sm-12">
+     <h1 align="center">Sign up</h1>
+   </div>
+   <div class="col-sm-12">
+     <form class="form" name="form" ng-submit="register(form)" novalidate>
+             <md-input-container>
+               <input ng-model="user.name" type="name" placeholder="Name" required name="name">
+               <div ng-messages="form.name.$error">
+                 <div ng-message="required">Name is required.</div>
+               </div>
+             </md-input-container>
+
+               <br>
+             <md-input-container>
+               <input ng-model="user.email" type="email" name="email" placeholder="Email" ng-required="true">
+               <div ng-messages="form.email.$error">
+                 <div ng-message="required">Email required.</div>
+                 <div ng-message="email">Invalid email.</div>
+               </div>
+             </md-input-container>
+                 
+                <br>
+             <md-input-container>
+               <!-- Use floating label instead of placeholder -->
+               <input ng-model="user.password" type="password" placeholder="Password" ng-required="true" name="password">
+               <div ng-messages="form.password.$error">
+                 <div ng-message="required">Password required.</div>
+               </div>
+             </md-input-container>
+
+                 <div align="center">
+                   <md-button class="md-raised" type="submit">Sign up</md-button>
+                   <!-- <md-button class="md-raised" href="/login">Login</md-button> -->
+                 </div>
+
+     </form>
+   </div>
+ </div>
+ <hr>
 </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('schoolPlannerApp')
-  .controller('SidebarCtrl', function ($scope, $location, Auth, $mdSidenav) {
+  .controller('SidebarCtrl', function($scope, $location, Auth, $mdSidenav) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
@@ -12,6 +12,17 @@ angular.module('schoolPlannerApp')
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
 
+    $scope.Calendar=function(){
+
+      $location.path('/calendar');
+
+    }
+
+    $scope.Universities=function(){
+
+      $location.path('/universities');
+
+    }
 
     $scope.logout = function() {
       Auth.logout();

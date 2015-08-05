@@ -32,3 +32,11 @@
 .navbar-text {
     margin-left: 15px;
 }
+
+.container_overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.3;
+}
