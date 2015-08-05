@@ -1,7 +1,8 @@
-/**
+/*
+/!**
  * Populate DB with sample data on server start
  * to disable, edit config/environment/index.js, and set `seedDB: false`
- */
+ *!/
 
 'use strict';
 
@@ -36,34 +37,41 @@ Thing.find({}).remove(function() {
 
 University.find({}).remove(function() {
   University.create({
-    name : 'Universitatea Politehnica Bucuresti'
-  }, {
-    name : 'Academia de Studii Economice'
-  }, {
-    name : 'Universitatea de Arhitectura si Urbanism "Ion Mincu" din Bucuresti'
-  },  {
-    name : 'Universitatea "Spiru Haret" din Bucuresti'
-  },  {
-    name : 'Universitatea "Hyperion" din Bucuresti'
+    name : 'Universitatea Politehnica Bucuresti',
+    description: 'Worst shit eva',
+      faculties: []
   });
+});
+
+Subject.find({}).remove(function() {
+    Subject.create({
+        name: 'Algoritmi',
+        serie: '424B',
+        teacher: 'Burileanu',
+        year: 2
+    }, {
+        name: 'Algoritmi Paraleli',
+        serie: '443B',
+        teacher: 'Ungureanu',
+        year: 4
+        });
 });
 
 Faculty.find({}).remove(function() {
   Faculty.create({
-    name : 'Electronica Telecomunicatii si Tehnologia Informatiei',
-    department : ''
+      name : 'Electronica Telecomunicatii si Tehnologia Informatiei',
+      professors: ['Dumitru STANOMIR', 'Dragos DOBRESCU'],
+      subjects: []
   }, {
-    name : 'Cibernetică, Statistică şi Informatică Economică',
-    department : ''
+      name : 'Cibernetică, Statistică şi Informatică Economică',
+      professors: ['Ungureanu Mihaela','Buri'],
+      subjects: []
   }, {
     name : 'Facultatea de Urbanism',
-    department : ''
   },  {
     name : 'Drept si Administratie Publica',
-    department : ''
   },  {
     name : 'Facultatea de Arte',
-    department : ''
   });
 });
 
@@ -97,3 +105,4 @@ User.find({}).remove(function() {
       }
   );
 });
+*/

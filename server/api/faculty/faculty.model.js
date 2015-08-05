@@ -5,7 +5,8 @@ var mongoose = require('mongoose'),
 
 var FacultySchema = new Schema({
     name: String,
-    departments: String,
+    professors: [String],
+    subjects: [{type: Schema.Types.ObjectId, ref: 'Subject'}],
     active: Boolean
 });
 

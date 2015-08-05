@@ -5,12 +5,15 @@ var Faculty = require('./faculty.model');
 
 // Get list of faculty
 exports.index = function(req, res) {
-    Faculty.find(function (err, faculties) {
+    Faculty.find({})
+    .populate('subjects')
+    .exec(function (err, faculties) {
         if(err) { return handleError(res, err); }
         return res.status(200).json(faculties);
     });
 };
 
+/*
 // Get a single faculty
 exports.show = function(req, res) {
     Faculty.findById(req.params.id, function (err, faculty) {
@@ -18,6 +21,16 @@ exports.show = function(req, res) {
         if(!faculty) { return res.status(404).send('Not Found'); }
         return res.json(faculty);
     });
+};
+*/
+
+
+exports.show = function(req, res) {
+    Faculty.findById(req.params.id)
+        .populate('subjects')
+        .exec(function (err, faculty) {
+            return res.status(201).json(faculty);
+        })
 };
 
 // Creates a new faculty in the DB.
