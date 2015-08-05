@@ -23,6 +23,16 @@ angular.module('schoolPlannerApp')
         templateUrl: 'app/details/details.html',
         controller: 'DetailsCtrl'
       })
+      .state('universitati', {
+        url: '/universitati',
+        templateUrl: 'app/details/universitati/universitati.html',
+        controller: 'UnivCtrl'
+      })
+      .state('telecomunicatii', {
+        url: '/telecomunicatii',
+        templateUrl: 'app/details/telecomunicatii/telecomunicatii.html',
+        controller: 'TeleCtrl'
+      })
       .state('settings', {
         url: '/settings',
         templateUrl: 'app/account/settings/settings.html',
