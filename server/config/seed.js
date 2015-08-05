@@ -41,13 +41,21 @@ User.find({}).remove(function() {
     provider: 'local',
     name: 'Test User',
     email: 'test@test.com',
-    password: 'test'
+    password: 'test',
+    year: 4,  
+    group: '442A',
+    series: 'A',
+    faculty: 'ETTI'
   }, {
     provider: 'local',
     role: 'admin',
     name: 'Admin',
     email: 'admin@admin.com',
-    password: 'admin'
+    password: 'admin',
+    year: 2,  
+    group: '421B',
+    series: 'B',
+    faculty: 'ETTI'
   }, function() {
       console.log('finished populating users');
     }

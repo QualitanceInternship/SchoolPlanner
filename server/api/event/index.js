@@ -7,6 +7,7 @@ var router = express.Router();
 
 router.get('/', controller.index);
 router.get('/:id', controller.show);
+router.get('/usergroup/:id', controller.myStudentEvents);
 
 
 module.exports = router;

@@ -19,6 +19,15 @@ exports.show = function(req, res) {
     return res.json(event);
   });
 };
+// get events by user
+exports.myStudentEvents = function(req, res) {     
+        Event.find({ 'group': req.params.id }, function (err, event) {
+            if(err) { return handleError(res, err); }
+            if(!event) { return res.status(404).send('Not Found'); }
+            return res.json(event);
+          })
+    };
+
 
 
 function handleError(res, err) {
