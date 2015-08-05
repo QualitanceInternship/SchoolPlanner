@@ -3,19 +3,60 @@ angular.module('schoolPlannerApp')
 .controller('CalendarCtrl',
    function($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog) {
     $scope.events = [];
+
+    $scope.newEvents = [];
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
 
-     calendarFactory.getEvents()
-   .then(function (events) {
-    $scope.events = events;
-    $scope.eventSources[0] = events;
-    console.log("Events: ", $scope.events);
-  }, function (error) {
-    console.error(error);
+    calendarFactory.getEvents()
+    .then(function (events) {
+      $scope.events = events;
+
+      for(j=0; j<$scope.events.length; j++)
+        arraynou($scope.events[j]);
+
+      $scope.eventSources[0] = $scope.newEvents;
+
+        }, function (error) {
+      console.error(error);
   });
+
+function arraynou(eventt){
+    for(i=0; i < eventt.noocc; i++){
+      var sdate = new Date(eventt.start);
+
+      var sd = sdate.getDate();
+      var sm = sdate.getMonth();
+      var sy = sdate.getFullYear();
+      var sh = sdate.getHours();
+      var smn = sdate.getMinutes();
+
+      var edate = new Date(eventt.end);
+      var ed = edate.getDate();
+      var em = edate.getMonth();
+      var ey = edate.getFullYear();
+      var eh = edate.getHours();
+      var emn = edate.getMinutes();
+
+      var newEv = [];
+      
+      newEv.professor = eventt.professor;
+      newEv.start = new Date(sy, sm, sd + eventt.freq*i*7, sh, smn);
+      newEv.end = new Date(ey, em, ed + eventt.freq*i*7, eh, emn);
+      newEv.title = eventt.title;
+      newEv.eventType = eventt.eventType;
+      newEv.year = eventt.year;
+      newEv.group = eventt.group;
+      newEv.series = eventt.series;
+      newEv.faculty = eventt.faculty;
+
+      $scope.newEvents.push(newEv);
+    }
+  }
+
+
 // $scope.events = [
 //       {title: 'All Day Event',start: new Date(y, m, 1)},
 //       {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
@@ -51,19 +92,41 @@ angular.module('schoolPlannerApp')
           {type:'party',title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
         ]
     };
-    /* alert on eventClick */
-    $scope.alertOnEventClick = function( date, jsEvent, view){
-        $scope.alertMessage = (date.title + ' was clicked ');
-         $mdDialog.show(
-      $mdDialog.alert()
-        .parent(angular.element(document.body))
-        .title('Event')
-        .content('You can specify some description text in here.')
-        .ariaLabel('Alert Dialog Demo')
-        .ok('Close')
-        // .targetEvent(ev)
-    );
-    };
+
+    function showDialog(date, jsEvent, view) {
+       var parentEl = angular.element(document.body);
+       $mdDialog.show({
+         parent: parentEl,
+         targetEvent: jsEvent,
+         templateUrl: 'app/modal/dialog.html',
+         locals: {
+           items: date
+         },
+         controller: DialogController
+      });
+      function DialogController($scope, $mdDialog, items) {
+        $scope.items = {
+            title: items.title,
+            professor: items.professor,
+            eventType: items.eventType,
+            year: items.year,
+            series: items.series,
+            faculty: items.faculty,
+            group: items.group,
+            start: items.start,
+            end: items.end
+
+        };
+
+        console.log(items);
+        $scope.closeDialog = function() {
+          $mdDialog.hide();
+        }
+      }
+    }
+
+    $scope.alertOnEventClick = showDialog;
+
     /* alert on Drop */
      $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
        $scope.alertMessage = ('Event Droped to make dayDelta ' + delta);
@@ -117,7 +180,7 @@ angular.module('schoolPlannerApp')
          $compile(element)($scope);
      };
 
-    $
+
     /* config object */
     $scope.uiConfig = {
       calendar:{
