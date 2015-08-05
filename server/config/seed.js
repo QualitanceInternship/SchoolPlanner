@@ -63,38 +63,50 @@ User.find({}).remove(function() {
 });
 
 Event.find({}).remove(function() {
-  Event.create({
-  professor: 'Lucian Stanciu',  
-  start: new Date(y, m, d, 13, 0),
-  end: new Date(y, m, d, 15, 0),
-  title: 'IEM',
-  eventType: 'curs',
-  year: 4,  
-  group: '442A',
-  series: 'A',
-  faculty: 'ETTI'
-},
-{
-  professor: 'Burileanu',  
-  start: new Date(y, m, d - 5, 13, 0),
-  end: new Date(y, m, d - 5, 15, 0),
-  title: 'AMP',
-  eventType: 'curs',
-  year: 2,  
-  group: '421B',
-  series: 'B',
-  faculty: 'ETTI'
-},
-{
-  professor: 'Petrescu',  
-  start: new Date(y, m, d - 2, 13, 0),
-  end: new Date(y, m, d - 2, 15, 0),
-  title: 'Microunde',
-  eventType: 'curs',
-  year: 3,  
-  group: '431D',
-  series: 'D',
-  faculty: 'ETTI'
-});
+      Event.create({
+      professor: 'Lucian Stanciu',
+      start: new Date(y, m, d, 13, 0),
+      end: new Date(y, m, d, 15, 0),
+      title: 'IEM',
+      eventType: 'curs',
+      year: 4,
+      group: '442A',
+      series: 'A',
+      faculty: 'ETTI',
+      freq: 2,
+      noocc: 1,
+      sala: 'Sala E400',
+      description: 'Ne pregatim pentru test'
+    },
+    {
+      professor: 'Burileanu',
+      start: new Date(y, m, d - 5, 13, 0),
+      end: new Date(y, m, d - 5, 15, 0),
+      title: 'AMP',
+      eventType: 'curs',
+      year: 2,
+      group: '421B',
+      series: 'B',
+      faculty: 'ETTI',
+      freq: 5,
+      noocc: 2,
+      sala: 'Sala A500',
+      description: 'Ne pregatim pentru test'
+    },
+    {
+      professor: 'Petrescu',
+      start: new Date(y, m, d - 2, 13, 0),
+      end: new Date(y, m, d - 2, 15, 0),
+      title: 'Microunde',
+      eventType: 'curs',
+      year: 3,
+      group: '431D',
+      series: 'D',
+      faculty: 'ETTI',
+      freq: 4,
+      noocc: 2,
+      sala: 'Sala F100',
+      description: 'Ne pregatim pentru test'
+    });
 
 });

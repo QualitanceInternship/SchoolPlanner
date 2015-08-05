@@ -14,7 +14,9 @@ var EventSchema = new Schema({
   series: String,
   faculty: String,
   freq: {type: Number },
-  noocc: {type: Number}
+  noocc: {type: Number},
+  sala: String,
+  description: String
 });
 
 module.exports = mongoose.model('Event', EventSchema);

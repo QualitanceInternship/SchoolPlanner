@@ -42,15 +42,9 @@ function arraynou(eventt){
 
       var newEv = [];
       
-      newEv.professor = eventt.professor;
+      newEv = eventt;
       newEv.start = new Date(sy, sm, sd + eventt.freq*i*7, sh, smn);
       newEv.end = new Date(ey, em, ed + eventt.freq*i*7, eh, emn);
-      newEv.title = eventt.title;
-      newEv.eventType = eventt.eventType;
-      newEv.year = eventt.year;
-      newEv.group = eventt.group;
-      newEv.series = eventt.series;
-      newEv.faculty = eventt.faculty;
 
       $scope.newEvents.push(newEv);
     }
@@ -114,8 +108,9 @@ function arraynou(eventt){
             faculty: items.faculty,
             group: items.group,
             start: items.start,
-            end: items.end
-
+            end: items.end,
+            sala: items.sala,
+            description: items.description
         };
 
         console.log(items);
