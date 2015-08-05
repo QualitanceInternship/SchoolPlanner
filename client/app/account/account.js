@@ -18,6 +18,21 @@ angular.module('schoolPlannerApp')
         templateUrl: 'app/account/calendar/calendar.html',
         controller: 'CalendarCtrl'
       })
+      .state('details', {
+        url: '/details',
+        templateUrl: 'app/details/details.html',
+        controller: 'DetailsCtrl'
+      })
+      .state('universitati', {
+        url: '/universitati',
+        templateUrl: 'app/details/universitati/universitati.html',
+        controller: 'UnivCtrl'
+      })
+      .state('telecomunicatii', {
+        url: '/telecomunicatii',
+        templateUrl: 'app/details/telecomunicatii/telecomunicatii.html',
+        controller: 'TeleCtrl'
+      })
       .state('settings', {
         url: '/settings',
         templateUrl: 'app/account/settings/settings.html',
