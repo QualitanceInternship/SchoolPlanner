@@ -1,18 +1,91 @@
 
 
-<md-toolbar layout="row" class="md-whiteframe-z1" ng-controller="NavbarCtrl">
+<md-toolbar layout="row" class="md-whiteframe-z1 nav-colour" ng-controller="NavbarCtrl">
   
-  <md-button class="menu" hide-gt-sm ng-click="toggleList()" aria-label="Show User List">
-    <md-icon md-svg-icon="assets/images/menu.svg" ></md-icon>
+  <md-button class="menu" ng-if='isLoggedIn()' hide-gt-sm ng-click="toggleList()" aria-label="Show User List">
+    <md-icon ng-if='isLoggedIn()'md-svg-icon="assets/images/menu.svg" ></md-icon>
   </md-button>
 
-  <md-button class=class="md-icon-button" href="/" >School Planner</md-button>
+  <md-button class=class="md-icon-button" href="/" hide show-gt-sm >School Planner</md-button>
   <span flex></span>
+ 
+    <md-list-item ng-if="isLoggedIn()">
+    
+       <md-button href="/universities" hide show-gt-sm >Universities</md-button>
+    
+  </md-list-item>
 
-  <!-- <md-button class="md-raised md-primary" ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" href="/login" >Login</md-button>
+
+  <md-list-item ng-if="isLoggedIn()">
+    
+       <md-button href="/calendar" hide show-gt-sm >Calendar</md-button>
+    
+    </md-list-item>
+
+   <md-button ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" href="/login" >Login</md-button>
   
-  <p ng-show="isLoggedIn()">Hello {{ getCurrentUser().name }}</p>
-      
-  <md-button class="md-icon-button" ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" href="" ng-click="logout()">Logout
-  </md-button> -->
+  <md-button ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" href="/signup" >Signup</md-button>
+
+  <!-- <p ng-show="isLoggedIn()">Hello {{ getCurrentUser().name }}</p> -->
+    <md-list-item >
+  <md-button  ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" href="" ng-click="logout()">Logout
+  </md-button> 
+
+ <md-list-item ng-if="isAdmin()">
+ <img src="assets/images/profile.png" height="35" width="40" > 
+ </md-list-item>
+
+</md-list-item >
+
 </md-toolbar>
+
+
+
+
+ <!-- <div id="tabsContent" horizontal="" layout=""><shadow></shadow><div id="selectionBar"
+     class="" on-transitionend="{{ barTransitionEnd }}" style="width: 18.0020853384665%; 
+     left: 0%;"></div></div>
+
+     <paper-tab label="about" role="" inline="" flex="" center-center="" horizontal="" layout="" class="core-selected" active="">
+              <a href="about" data-ajax-link="" data-track-link="nav-about" data-transition="masthead-ripple-transition" layout="" horizontal="" center="" class="">
+                <i18n-msg msgid="about">About</i18n-msg>
+              </a>
+            </paper-tab>
+
+            <paper-tab label="schedule" role="" inline="" flex="" center-center="" horizontal="" layout="" class="">
+              <a href="schedule#day1" data-ajax-link="" data-track-link="nav-schedule" data-transition="masthead-ripple-transition" layout="" horizontal="" center="" class="">
+                <i18n-msg msgid="schedule">Schedule</i18n-msg>
+              </a>
+            </paper-tab>
+
+          
+
+    
+            
+          </div>
+          <paper-tabs class="white bg-dark-grey" valueattr="label" selected="{{selectedPage}}" link="" noink="" role="tablist" horizontal="" center="" layout="">
+            
+             
+              </a>
+            </paper-tab>
+            <paper-tab label="videos" role="" inline="" flex="" center-center="" horizontal="" layout="">
+              <a href="videos" data-ajax-link="" data-track-link="nav-videos" data-transition="masthead-ripple-transition" layout="" horizontal="" center="">Videos</a>
+            </paper-tab>
+            <paper-tab label="onsite" role="" inline="" flex="" center-center="" horizontal="" layout="" class="">
+              <a href="onsite" data-ajax-link="" data-track-link="nav-onsite" data-transition="masthead-ripple-transition" layout="" horizontal="" center="">
+                <i18n-msg msgid="attend-onsite">Onsite</i18n-msg>
+              </a>
+            </paper-tab>
+            <paper-tab label="offsite" role="" inline="" flex="" center-center="" horizontal="" layout="">
+              <a href="offsite" data-ajax-link="" data-track-link="nav-offsite" data-transition="masthead-ripple-transition" layout="" horizontal="" center="">
+                <i18n-msg msgid="attend-offsite">Offsite</i18n-msg>
+              </a>
+            </paper-tab>
+          </paper-tabs>
+          <span id="signin-nav-elements" class="bg-dark-grey" layout="" horizontal="" center="">
+            
+            
+            <span class="anchor-like button-link" data-track-link="nav-signin" on-click="{{ signIn }}">Sign in</span>
+            <template if="{{currentUser}}"></template>
+          </span>
+        </core-toolbar> -->

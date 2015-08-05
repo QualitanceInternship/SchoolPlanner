@@ -29,7 +29,7 @@
 'use strict';
 
   angular.module('schoolPlannerApp')
-  .controller('FormCtrl', function ($scope, $http, socket) {
+  .controller('FormCtrl', function($scope, $http, socket) {
     $scope.subjects = [];
     
 

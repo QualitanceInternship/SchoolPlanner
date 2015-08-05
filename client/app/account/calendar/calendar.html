@@ -1,4 +1,33 @@
-
+<!-- <div layout = "row" flex>
 <h1>Calendar</h1>
+	<span flex></span>
+<md-button class="md-fab md-primary md-hue-2 newJob" aria-label="Profile" ng-show="isLoggedIn()" href="/post">
+       <md-tooltip>Add new event</md-tooltip>
+       +
+ </div>
+   </md-button>
+<div   ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources">
+</div> 
+ -->
 
-<div   ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+ <div layout="row" layout-align="center center" layout-margin>
+           <div flex="80">
+           	<div layout="row" layout-align="end center">
+           	<md-button ng-if = "isAdmin()"class="md-fab md-primary md-hue-2 newJob" aria-label="Profile" ng-show="isLoggedIn()" href="/post">
+       <md-tooltip>Add new event</md-tooltip>
+       +
+ 
+   </md-button></div>
+   <md-card>
+     
+     <md-card-content>
+     
+       <h2 class="md-title">Orar</h2>
+
+
+       <div    ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
+     </md-card-content>
+   </md-card>
+
+</div>
+</div>

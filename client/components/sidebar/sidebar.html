@@ -1,19 +1,49 @@
 
- <md-toolbar class="md-whiteframe-z1" >
-        <h2>Menu</h2>
+ <md-toolbar class="md-whiteframe-z1 nav-colour">
+        <center><h2> School Planner</h2></center>
+        <center><img src="assets/images/yeoman.png" alt="I'm Yeoman" height="80" 
+        width="80"></center>
     </md-toolbar>
 
 <div align = "center">
-  <md-list-item ng-if="isAdmin()">
+
+  <md-menu-content width="4" class="md-default-theme" style = " background-color: #80CBC4 ;" >
+  <md-menu-item ng-if="isLoggedIn()">
+    <button ng-click = "Universities();" class="md-button " md-ink-ripple tabindex="0">
+      <span >
+                <h3> UNIVERSITIES </h3>
+        </span>      <div class="md-ripple-container"></div>
+
+    </button>
+  </md-menu-item>
+  <md-menu-divider></md-menu-divider>
+  <md-menu-item ng-if="isLoggedIn()">
+    <button ng-click = "Calendar();"class="md-button " md-ink-ripple tabindex="0">
+      <span >
+                <h3> CALENDAR </h3>
+        </span>      <div class="md-ripple-container"></div>
+
+    </button>
+  </md-menu-item>
+</md-menu-content>
+</div>
+
+  
+   <!-- <md-list-item ng-if="isAdmin()">
+  
     
-       <md-button href="/addsubject" class="md-raised">Add subject</md-button>
+       <md-button href="/universities" >Universities</md-button>
+       
     
   </md-list-item>
+
   <md-list-item ng-if="isAdmin()">
+  
     
-       <md-button href="/listSubjects" class="md-raised">List Subjects</md-button>
+       <md-button href="/calendar" >Calendar</md-button>
+       
     
-  </md-list-item>
+  </md-list-item> -->
 <!-- <md-menu>
   
   <md-button ng-click="$mdOpenMenu()">
