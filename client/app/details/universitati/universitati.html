@@ -1,24 +1,27 @@
 <h1>Universities</h1>
 
 	 <md-content class="md-padding" style="
-    background: transparent;
-">
+    background: transparent;">
 	 <!-- <div ng-repeat="" ng-class ="{ 'md-whiteframe-z4' : hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"> -->
 
 		<div layout="row" layout-align="center center"layout-margin>
 
 			<!-- Card #1 -->
-	  		<div flex="25" flex-order="1">
+	  		<div flex="25" flex-order="1" ng-repeat="univ in university" ng-class ="{ 'md-whiteframe-z4' : hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 
 
-	  		<md-card ng-click="goTo('/faculties')">
+	  		<md-card  >
 	  			<img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
 			        <div class="md-ripple-container"></div>
 				<md-card-content>
-			  	<h4>UPB</h4>
+			  	<h4>{{univ.name}}</h4>
 
 			 	</md-card-content>
-
+			 		<div class="md-actions" layout="row" layout-align="end center">
+			 			 <md-button  md-no-ink class="md-raised">Detalii</md-button>
+                         <md-button  md-no-ink class="md-raised" ng-click="goTo('/faculties')">Facultati<a href=""></a></md-button>
+                         
+                    </div>
 			</md-card>
 
 		    </div>
@@ -109,3 +112,4 @@
 
 	</div>
 	</md-content>
+

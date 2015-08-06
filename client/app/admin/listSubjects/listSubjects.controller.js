@@ -2,7 +2,12 @@
 
 angular.module('schoolPlannerApp')
     .controller('ListSubjCtrl', function ($scope, $http, socket, $location) {
+        $scope.goTo = function(path) {
+         $location.path(path);
+}
+
         $scope.allSubjects = [];
+        
 
         $http.get('/api/subjects').success(function (allSubjects) {
             $scope.allSubjects = allSubjects;
