@@ -1,105 +1,25 @@
 <md-content class="md-padding" style="background: transparent;">
-		 <h1>Universities</h1>
+	 <h1>Universities</h1>
 
-		 <create-button></create-button>
-	 <!-- <div ng-repeat="" ng-class ="{ 'md-whiteframe-z4' : hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"> -->
+	 <create-button></create-button>
 
-		<div layout="row" layout-align="center center"layout-margin>
+	<div layout="row" layout-align="center center"layout-margin>
 
-			<!-- Card #1 -->
-	  		<div flex="25" flex-order="1">
-				<md-card ng-click="goTo('/faculties')">
-					<img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-						<div class="md-ripple-container"></div>
-					<md-card-content>
-					<h4>UPB</h4>
-					</md-card-content>
-				</md-card>
-		    </div>
-
-		    <!-- Card #2 -->
-			  <div flex="25" flex-order="2">
-			 <md-card>
-			 <img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-			        <div class="md-ripple-container"></div>
-			 <md-card-content>
-			   <h4>Universitatea Politehnica Iasi</h4>
-
-			 </md-card-content>
-			 <div class="md-actions" layout="row" layout-align="end center">
-			 	<md-button  md-no-ink class="md-raised">Detalii</md-button>
-			 	<md-button ng-click="goTo('/telecomunicatii')" md-no-ink class="md-raised">Intra</md-button>
-			 	</div>
-			</md-card>
-
-			  </div>
-
-			  <!-- Card #3 -->
-			  <div flex="25" flex-order="3">
+		<div flex="25" flex-order="1" ng-repeat="univ in university" ng-class ="{ 'md-whiteframe-z4' : hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 			<md-card>
-			 <img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-			        <div class="md-ripple-container"></div>
-			 <md-card-content>
-			   <h4>Academia de Medicina</h4>
+				<img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
+					<div class="md-ripple-container"></div>
+				<md-card-content>
+				<h4>{{univ.name}}</h4>
 
-			 </md-card-content>
+				</md-card-content>
+					<div class="md-actions" layout="row" layout-align="end center">
+						 <md-button  md-no-ink class="md-raised">Detalii</md-button>
+						 <md-button  md-no-ink class="md-raised" ng-click="goTo('/faculties')">Facultati<a href=""></a></md-button>
 
-			 <div class="md-actions" layout="row" layout-align="end center">
-			 	<md-button  md-no-ink class="md-raised">Detalii</md-button>
-			 	<md-button  md-no-ink class="md-raised">Intra</md-button>
-			 </div>
-
+					</div>
 			</md-card>
-			  </div>
-			</div>
-
-
-			<div layout="row" layout-align="center center" layout-margin>
-	  		<div flex="25" flex-order="4">
-			<md-card>
-			 <img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-			        <div class="md-ripple-container"></div>
-			 <md-card-content>
-			   <h4>ASE</h4>
-
-			 </md-card-content>
-			 <div class="md-actions" layout="row" layout-align="end center">
-			 	<md-button  md-no-ink class="md-raised">Detalii</md-button>
-			 	<md-button  md-no-ink class="md-raised">Intra</md-button>
-			 </div>
-			</md-card>
-
-
-			  </div>
-			  <div flex="25" flex-order="5">
-			 <md-card>
-			 <img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-			        <div class="md-ripple-container"></div>
-			 <md-card-content>
-			   <h4>Universitatea de Arte</h4>
-
-			 </md-card-content>
-			 <div class="md-actions" layout="row" layout-align="end center">
-			 	<md-button  md-no-ink class="md-raised">Detalii</md-button>
-			 	<md-button  md-no-ink class="md-raised">Intra</md-button>
-			 </div>
-			</md-card>
-
-			  </div>
-			  <div flex="25" flex-order="6">
-			<md-card>
-			 <img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-			        <div class="md-ripple-container"></div>
-			 <md-card-content>
-			   <h4>Universitatea de Teatru si Film</h4>
-
-			 </md-card-content>
-			 <div class="md-actions" layout="row" layout-align="end center">
-			 	<md-button  md-no-ink class="md-raised">Detalii</md-button>
-			 	<md-button  md-no-ink class="md-raised">Intra</md-button>
-			 </div>
-			</md-card>
-			  </div>
-
+		</div>
 	</div>
+
 </md-content>

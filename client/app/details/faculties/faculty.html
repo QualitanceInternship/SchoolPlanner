@@ -1,65 +1,36 @@
 <h1>Faculties</h1>
 
 <md-content class="md-padding" style="
-    background: transparent;
-">
-	<!-- <div ng-repeat="" ng-class ="{ 'md-whiteframe-z4' : hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false"> -->
+    background: transparent;">
 
-	<div layout="row" layout-align="center center"layout-margin>
+      
+
+
+        	<!-- Card Collection -->
+	<div layout="row" layout-align="center center" layout-margin >
 
 		<!-- Card #1 -->
-		<div flex="25" flex-order="1">
+		<div flex="25"  ng-repeat="item in faculty" ng-class ="{ 'md-whiteframe-z4' : hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false" >
 
-
-			<md-card ng-click="goTo('/details')">
+			
+			<md-card >
 				<img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-				<div class="md-ripple-container"></div>
+				<div class="md-ripple-container" ></div>
 				<md-card-content>
-					<h4>Facultatea de Automatica si Calculatoare</h4>
-
+					<p>{{ item.name }}</p>
 				</md-card-content>
-
+					<div class="md-actions" layout="row" layout-align="end center">
+                         <md-button  md-no-ink class="md-raised" >Detalii</md-button>
+                         <md-button  md-no-ink class="md-raised" ng-click="goTo('/listSubjects')">Materii</md-button>
+                    </div>
 			</md-card>
-
+			  
 		</div>
 
-		<!-- Card #2 -->
-		<div flex="25" flex-order="2">
-			<md-card>
-				<img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-				<div class="md-ripple-container"></div>
-				<md-card-content>
-					<h4>Facultatea de Telecomunicatii</h4>
-
-				</md-card-content>
-				<div class="md-actions" layout="row" layout-align="end center">
-					<md-button  md-no-ink class="md-raised">Detalii</md-button>
-					<md-button ng-click="goTo('/telecomunicatii')" md-no-ink class="md-raised">Intra</md-button>
-				</div>
-			</md-card>
-
-		</div>
-
-		<!-- Card #3 -->
-		<div flex="25" flex-order="3">
-			<md-card>
-				<img src="assets/images/images.jpg" class="md-card-image" alt="image caption">
-				<div class="md-ripple-container"></div>
-				<md-card-content>
-					<h4>Facultatea de Medicina</h4>
-
-				</md-card-content>
-
-				<div class="md-actions" layout="row" layout-align="end center">
-					<md-button  md-no-ink class="md-raised">Detalii</md-button>
-					<md-button  md-no-ink class="md-raised">Intra</md-button>
-				</div>
-
-			</md-card>
-		</div>
+		
 	</div>
 
-
+			<!-- Card layout #2 -->
 	<div layout="row" layout-align="center center" layout-margin>
 		<div flex="25" flex-order="4">
 			<md-card>
@@ -94,3 +65,5 @@
 		</div>
 	</div>
 </md-content>
+
+
