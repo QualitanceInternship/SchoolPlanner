@@ -7,6 +7,7 @@ var UniversitySchema = new Schema({
     name: String,
     description: String,
     faculties: [{type: Schema.Types.ObjectId, ref: 'Faculty'}],
+    universityImage: String,
     active: Boolean
 });
 

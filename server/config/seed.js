@@ -128,12 +128,14 @@ Event.find({}).remove(function() {
             name: 'Algoritmi',
             serie: '424B',
             teacher: 'Burileanu',
-            year: 2
+            year: 2,
+            faculties: ['Electronica']
         }, {
             name: 'Algoritmi Paraleli',
             serie: '443B',
             teacher: 'Ungureanu',
-            year: 4
+            year: 4,
+            faculties: ['Electronica']
         });
     });
 
@@ -141,17 +143,28 @@ Event.find({}).remove(function() {
         Faculty.create({
             name : 'Electronica Telecomunicatii si Tehnologia Informatiei',
             professors: ['Dumitru STANOMIR', 'Dragos DOBRESCU'],
-            subjects: []
+            subjects: [],
+            university: 'Politehnica Bucuresti'
         }, {
             name : 'Cibernetică, Statistică şi Informatică Economică',
             professors: ['Ungureanu Mihaela','Buri'],
-            subjects: []
+            subjects: [],
+            uuniversity: 'Politehnica Bucuresti'
         }, {
             name : 'Facultatea de Urbanism',
+            professors: ['Ungureanu','Buri'],
+            subjects: [],
+            university: 'Politehnica Bucuresti'
         },  {
             name : 'Drept si Administratie Publica',
+            professors: ['Mihaela','Buri'],
+            subjects: [],
+            university: 'Politehnica Bucuresti'
         },  {
             name : 'Facultatea de Arte',
+            professors: ['Ungureanu','Burileanu'],
+            subjects: [],
+            university: 'Politehnica Bucuresti'
         });
     });
 

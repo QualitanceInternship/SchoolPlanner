@@ -5,10 +5,11 @@ var mongoose = require('mongoose'),
 
 var SubjectSchema = new Schema({
   name: String,
-  faculty: String,
+  faculties: [String],
   serie: String,
   teacher: String,
   year: Number,
+  subjectImage: String,
 
 });
 

@@ -18,7 +18,7 @@ exports.index = function(req, res) {
                     return res.status(200).json(unifaculty);
                 });
         });
-}
+};
 // Get a single university
 /*
 exports.show = function(req, res) {
@@ -32,10 +32,18 @@ exports.show = function(req, res) {
 
 exports.show = function(req, res) {
     University.findById(req.params.id)
-        .populate('faculties') // only return the Persons nme
+        .populate('faculties')
         .exec(function (err, university) {
-            return res.status(201).json(university);
-        })
+            if (err) {
+                return handleError(res, err);
+            }
+            University.populate(university,
+                {path: 'faculties.subjects', model: 'Subject'},
+                function (err, unifaculty) {
+                    if (err) return callback(err);
+                    return res.status(200).json(unifaculty);
+                });
+        });
 };
 
 
