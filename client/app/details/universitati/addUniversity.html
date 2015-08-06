@@ -1,0 +1,33 @@
+
+
+<h1 align="center"> Add University </h1>
+<h3 align="center" ng-show="saved"> Sucesfully saved</h3>
+
+
+
+<div layout="column">
+  <md-content>
+    <md-input-container>
+      <label>Name</label>
+      <input ng-model="newUniversity.name" type="text">
+    </md-input-container>
+
+    <md-input-container>
+      <label>Description</label>
+      <input ng-model="newUniversity.description" type="text">
+    </md-input-container>
+
+    <md-input-container>
+      <label>Faculty</label>
+      <input ng-model="newUniversity.faculty" type="text">
+    </md-input-container>
+
+    </md-content>
+   
+  
+  
+</div>
+<div align="center">
+       <md-button class="md-raised md-warn" ng-click="addUniversity()" type="submit">Save</md-button>
+</div>
+ 
