@@ -18,7 +18,7 @@ angular.module('schoolPlannerApp')
         return deferred.promise;
       },
       getMyEvents: function (){
-
+        console.error('Auth.getCurrentUser().group: ', Auth.getCurrentUser().group);
 
         var deferred = $q.defer(),
           httpPromise = $http.get('/api/events/usergroup/'+ Auth.getCurrentUser().group);

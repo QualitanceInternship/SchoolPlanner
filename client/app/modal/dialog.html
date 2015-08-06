@@ -1,12 +1,13 @@
 <md-dialog aria-label="Mango (Fruit)">
     <form>
-    <calendar-event ng-if="show('calendar')"></calendar-event>
-    <create-subject ng-if="show('subject')"></create-subject>
+        <calendar-event ng-if="show('calendar')"></calendar-event>
+        <create-subject ng-if="show('subject')"></create-subject>
+        <create-event ng-if="show('event')"></create-event>
 
-    <div class="md-actions" layout="row">
-        <md-button ng-click="closeDialog()" class="md-primary">
-            Close{{view.item}}
-        </md-button>
-    </div>
+        <div class="md-actions" layout="row">
+            <md-button ng-click="closeDialog()" class="md-primary">
+                Close{{view.item}}
+            </md-button>
+        </div>
     </form>
 </md-dialog>

@@ -1,129 +1,122 @@
-<div ng-if="isAdmin()">
-<h1 align="center"> Add event </h1>
-<h3 align="center" style="color:red" ng-show="saved"> Sucesfully saved</h3>
+<div ng-controller="CalendarCtrl">
+    <h1 align="center"> Add event </h1>
+    <h3 align="center" style="color:red" ng-show="saved"> Sucesfully saved</h3>
+
+    <div style="padding:50px;">
+        <div layout="column">
+            <md-content>
+                <md-input-container flex>
+                    <label>Title</label>
+                    <input ng-model="newEvent.title" type="text">
+                </md-input-container>
+            </md-content>
+            <md-content>
+                <md-input-container>
+                    <label>Event Type</label>
+
+                    <input ng-model="newEvent.eventType" type="text">
+                </md-input-container>
+                <md-input-container>
+                    <label>Description</label>
+
+                    <input ng-model="newEvent.description" type="text">
+                </md-input-container>
+            </md-content>
+            <md-content>
+                <md-input-container flex>
+                    <label>Professor</label>
+                    <input ng-model="newEvent.professor" type="text">
+                </md-input-container>
+            </md-content>
+
+            <md-content layout-padding>
+                <form name="userForm">
+
+                    <div layout layout-sm="column">
+                        <!--<md-input-container flex>-->
+                            <!--<md-select ng-model="newEvent.faculty" placeholder="Faculty">-->
+                                <!--<md-option ng-repeat="faculty in faculties" value="{{faculty}}">{{faculty}}</md-option>-->
+                            <!--</md-select>-->
+                        <!--</md-input-container>-->
+
+
+                        <!--<md-input-container flex>-->
+                            <!--<md-select ng-model="newEvent.series" placeholder="Series">-->
+                                <!--<md-option ng-repeat="ser in sers" value="{{ser}}">{{ser}}</md-option>-->
+                            <!--</md-select>-->
+                        <!--</md-input-container>-->
 
 
 
-<div style="padding:50px;">
-<div layout="column">
-  <md-content>
-    <md-input-container flex>
-        <label>Title</label>
-        <input ng-model="newEvent.title" type="text">
-      </md-input-container>
-    </md-content>
-    <md-content>
-    <md-input-container>
-      <label>Event Type</label>
-     
-      <input ng-model="newEvent.eventType" type="text">
-    </md-input-container>
-    <md-input-container>
-      <label>Description</label>
-     
-      <input ng-model="newEvent.description" type="text">
-    </md-input-container>
-</md-content>
-<md-content>
-    <md-input-container flex>
-        <label>Professor</label>
-        <input ng-model="newEvent.professor" type="text">
-      </md-input-container>
-    </md-content>
-  
-  <md-content layout-padding>
-    <form name="userForm">
-      
-      <div layout layout-sm="column">
-        <md-input-container flex>
-           <md-select ng-model="newEvent.faculty" placeholder="Faculty">
-        <md-option ng-repeat="faculty in faculties" value="{{faculty}}">{{faculty}}</md-option>
-      </md-select>
-        </md-input-container>
+                        <md-content>
+                            <md-input-container flex>
+                                <label>Group</label>
+                                <input ng-model="newEvent.group" type="text">
+                            </md-input-container>
+                        </md-content>
+
+                    </div>
 
 
+                    <div layout layout-sm="column">
+                        <!--<md-input-container flex>-->
 
-        <md-input-container flex>
-           <md-select ng-model="newEvent.series" placeholder="Series">
-        <md-option ng-repeat="ser in sers" value="{{ser}}">{{ser}}</md-option>
-      </md-select>
-        </md-input-container>
-
-
-
-        <md-input-container flex>
-           <md-select ng-model="newEvent.group" placeholder="Groups">
-        <md-option ng-repeat="group in groups" value="{{group}}">{{group}}</md-option>
-      </md-select>
-        </md-input-container>
+                            <!--<md-select ng-model="newEvent.year" placeholder="Year">-->
+                                <!--<md-option ng-repeat="year in years" value="{{year}}">{{year}}</md-option>-->
+                            <!--</md-select>-->
+                        <!--</md-input-container>-->
 
 
-      </div>
+                        <md-input-container flex>
+                            <md-select ng-model="newEvent.freq" placeholder="Frequency">
+                                <md-option ng-repeat="freq in freqs" value="{{freq}}">{{freq}}</md-option>
+                            </md-select>
+                        </md-input-container>
 
 
-<div layout layout-sm="column">
-        <md-input-container flex>
-         
-           <md-select ng-model="newEvent.year" placeholder="Year">
-        <md-option ng-repeat="year in years" value="{{year}}">{{year}}</md-option>
-      </md-select>
-        </md-input-container>
+                        <md-input-container flex>
 
+                            <md-select ng-model="newEvent.noocc" placeholder="Number of occurrences">
+                                <md-option ng-repeat="noocc in nooccs" value="{{noocc}}">{{noocc}}</md-option>
+                            </md-select>
 
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>Starting Date</label>
+                            <input type="date" ng-model="newEvent.start">
+                        </md-input-container>
 
-        <md-input-container flex>
-         
-           <md-select ng-model="newEvent.freq" placeholder="Frequency">
-        <md-option ng-repeat="freq in freqs" value="{{freq}}">{{freq}}</md-option>
-      </md-select>
-        </md-input-container>
+                        <md-input-container flex>
+                            <label>Ending Date</label>
+                            <input type="date" ng-model="newEvent.end">
+                        </md-input-container>
 
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <md-select ng-model="shour" placeholder="Start Hour">
+                                <md-option ng-repeat="startHour in startHours" value="{{startHour}}">{{startHour}}
+                                </md-option>
+                            </md-select>
 
+                        </md-input-container>
 
-        <md-input-container flex>
-          
-           <md-select ng-model="newEvent.noocc" placeholder="Number of occurrences">
-        <md-option ng-repeat="noocc in nooccs" value="{{noocc}}">{{noocc}}</md-option>
-      </md-select>
-          
-        </md-input-container>
-</div>
-<div layout layout-sm="column">
-<md-input-container flex>
-          <label>Starting Date</label>
-          <input type="date" ng-model="newEvent.start">
-        </md-input-container>
+                        <md-input-container flex>
+                            <md-select ng-model="ehour" placeholder="End Hour">
+                                <md-option ng-repeat="endHour in endHours" value="{{endHour}}">{{endHour}}</md-option>
+                            </md-select>
 
-<md-input-container flex>
-          <label>Ending Date</label>
-          <input type="date" ng-model="newEvent.end">
-        </md-input-container>
+                        </md-input-container>
 
-</div>
-     <div layout layout-sm="column">
- <md-input-container flex>
-          <label>Start Hour</label>
-           <md-select ng-model="shour" placeholder="Start Hour">
-        <md-option ng-repeat="startHour in startHours" value="{{startHour}}">{{startHour}}</md-option>
-      </md-select>
+                    </div>
+                </form>
+            </md-content>
+        </div>
+        <div align="center">
+            <md-button class="md-raised md-warn" ng-click="addEvent()" type="submit">Save</md-button>
+        </div>
 
-      </md-input-container>
-
-       <md-input-container flex>
-          <label>End Hour</label>
-           <md-select ng-model="ehour" placeholder="End Hour">
-        <md-option ng-repeat="endHour in endHours" value="{{endHour}}">{{endHour}}</md-option>
-      </md-select>
-
-      </md-input-container>
- 
-      </div>
-      </form>
-  </md-content>
-</div>
-<div align="center">
-       <md-button class="md-raised md-warn" ng-click="addEvent()" type="submit">Save</md-button>
-</div>
-
-</div>
+    </div>
 </div>

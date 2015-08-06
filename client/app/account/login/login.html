@@ -1,44 +1,31 @@
+<div layout="column">
+    <h2  class="md-display-2" style="padding: 30px"layout layout-align="center center">
+        Welcome to School Planner!</h2>
+    <div layout="row">
+        <md-card flex offset-gt-md = "30" class="md-whiteframe-z4">
+            <md-card-content>
 
+                <div layout="column">
+                    <form class="form" name="form" ng-submit="login(form)">
+                        <md-input-container>
+                            <label>Email</label>
+                            <input ng-model="user.email" type="email" required>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Password</label>
+                            <input ng-model="user.password" type="password" required>
+                        </md-input-container>
 
- <div class="container" style="padding-left:100px">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1 align="center">Login</h1>
-    </div>
-    <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="login(form)" novalidate>
-
-        <div class="form-group">
-           <md-input-container>
-            <input ng-model="user.email" type="email" placeholder="Email (required)" required name="email" >
-             <div ng-show="form.$dirty" ng-messages="form.email.$error">
-                  <div ng-message="required">Email required.</div>
-                  <div ng-message="email">Invalid email.</div>
+                    </form>
                 </div>
-          </md-input-container>
-       </div>
+            </md-card-content>
+            <div  layout="row" layout-align="center center">
+                <md-button class="md-raised" ng-click="login(form)">Login</md-button>
+                <hr/>
 
-        <div class="form-group">
-          <md-input-container class="md-icon-float" >
-             <input ng-model="user.password" type="password" placeholder="Password" required name="password">
-             <div ng-show="form.$dirty" ng-messages="form.password.$error">
-                  <div ng-message="required">Password required.</div>
-                </div>
-            </md-input-container>
-        </div>
-
-        
-   
-
-        <div align="center">
-            <md-button class="md-raised" type="submit">Login</md-button>
-            
-        </div>
-      </form>
+                <md-button class="md-raised" href="/signup">Signup</md-button>
+            </div>
+        </md-card>
+        <div flex-gt-md="25"></div>
     </div>
-  </div>
- 
 </div>
-
-
-

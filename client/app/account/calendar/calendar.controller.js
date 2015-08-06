@@ -10,6 +10,11 @@ angular.module('schoolPlannerApp')
         var m = date.getMonth();
         var y = date.getFullYear();
 
+        $scope.createNew = function(event) {
+            createModal.showModal(null, event, null, $scope, 'event');
+
+        }
+
         calendarFactory.getMyEvents()
             .then(function (events) {
                 $scope.events = events;

@@ -40,33 +40,6 @@ Thing.find({}).remove(function() {
   });
 });
 
-
-User.find({}).remove(function() {
-    User.create({
-            provider: 'local',
-            name: 'Test User',
-            email: 'test@test.com',
-            password: 'test',
-            year: 4,
-            group: '442A',
-            series: 'A',
-            faculty: 'ETTI'
-        }, {
-            provider: 'local',
-            role: 'admin',
-            name: 'Admin',
-            email: 'admin@admin.com',
-            password: 'admin',
-            year: 2,
-            group: '421B',
-            series: 'B',
-            faculty: 'ETTI'
-        }, function() {
-            console.log('finished populating users');
-        }
-    );
-});
-
 Event.find({}).remove(function() {
     Event.create({
             professor: 'Lucian Stanciu',
@@ -168,34 +141,30 @@ Event.find({}).remove(function() {
         });
     });
 
-    User.find({}).remove(function() {
-        User.create({
-                provider: 'local',
-                role: 'admin',
-                name: 'Admin',
-                email: 'admin@admin.com',
-                password: 'admin'
-            },{
-                provider: 'local',
-                role: 'professor',
-                name: 'Professor',
-                email: 'professor@professor.com',
-                password: 'professor'
-            },{
-                provider: 'local',
-                role: 'student',
-                name: 'Student',
-                email: 'student@student.com',
-                password: 'student'
-            },{
-                provider: 'local',
-                role: 'user',
-                name: 'User',
-                email: 'user@user.com',
-                password: 'user'
-            }, function() {
-                console.log('finished populating users');
-            }
-        );
-    });
+
+User.find({}).remove(function() {
+    User.create({
+            provider: 'local',
+            name: 'Test User',
+            email: 'test@test.com',
+            password: 'test',
+            year: 4,
+            group: '442A',
+            series: 'A',
+            faculty: 'ETTI'
+        }, {
+            provider: 'local',
+            role: 'admin',
+            name: 'Admin',
+            email: 'admin@admin.com',
+            password: 'admin',
+            year: 2,
+            group: '421B',
+            series: 'B',
+            faculty: 'ETTI'
+        }, function() {
+            console.log('finished populating users');
+        }
+    );
+});
 
