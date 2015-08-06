@@ -18,4 +18,9 @@ angular.module('schoolPlannerApp')
                 templateUrl: 'app/details/faculties/faculty.html',
                 controller: 'FacultyCtrl'
             })
+            .state('addUniversity', {
+                url: '/addUniversity',
+                templateUrl: 'app/details/universitati/addUniversity.html',
+                controller: 'AddUniversityCtrl'
+            })
     });
