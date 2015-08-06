@@ -29,6 +29,12 @@ exports.myStudentEvents = function(req, res) {
     };
 
 
+exports.create = function(req, res) {
+  Event.create(req.body, function(err, events) {
+    if(err) { return handleError(res, err); }
+    return res.status(201).json(events);
+  });
+};
 
 function handleError(res, err) {
   return res.status(500).send(err);
