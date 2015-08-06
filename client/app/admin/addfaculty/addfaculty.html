@@ -1,0 +1,58 @@
+ 
+    <h1 align="center"> Add faculty </h1>
+    <h3 align="center" style="color:red" ng-show="saved"> Sucesfully saved</h3>
+   
+
+    <div style="padding:50px;">
+    <div layout="column">
+        
+        <md-content>
+                     <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="facultyname" type="text">
+                    </md-input-container>
+        </md-content>
+        
+
+        <md-content>
+                <md-input-container>
+                  <label>Teacher Name</label>
+                  <input ng-model="name" type="text">
+                </md-input-container>
+                <md-button ng-click="appendTeacher(name)" class="md-raised md-primary" flex>Add</md-button>
+                 <ul ng-repeat="pro in teachers ">
+                  <li>{{pro}}</li>
+                 </ul>
+        </md-content>
+
+
+        <md-content>
+              <div layout="row">
+              <md-input-container flex>
+                  <md-select ng-model="choice" flex placeholder="Subjects">
+                      <md-option ng-repeat="subject in allSubjects" value="{{subject._id}}">
+                      {{subject.name}}</md-option>
+                    </md-select>
+                   <div align="left">
+                     <md-button class="md-raised md-primary" ng-click="appendChoice(choice)" >Add </md-button>
+                   </div>
+                </md-input-container>
+                 </div>
+
+                    <ul ng-repeat="subject in displaySubjects">
+                    <li ng-repeat="choice in choices| filter:subject._id"> {{subject.name}}</li>
+                    </ul> 
+        </md-content>
+
+        <md-content>
+                <div align="center">
+                   <md-button class="md-raised md-warn" ng-click="addFaculty()" flex>Save</md-button>
+                </div>
+        </md-content>
+
+         </div>
+         </div>
+
+    
+
+     
