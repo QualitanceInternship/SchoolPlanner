@@ -1,25 +1,21 @@
 angular.module('schoolPlannerApp')
 
     .controller('CalendarCtrl',
-    function ($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog, createModal) {
+    function ($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog, Auth, createModal) {
         $scope.events = [];
-        $scope.createNew = function(event) {
-            alert();
-        }
+
         $scope.newEvents = [];
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
         var y = date.getFullYear();
 
-        calendarFactory.getEvents()
+        calendarFactory.getMyEvents()
             .then(function (events) {
                 $scope.events = events;
-
-                for (j = 0; j < $scope.events.length; j++)
-                    arraynou($scope.events[j]);
-
-                $scope.eventSources[0] = $scope.newEvents;
+                $scope.eventSources[0] = events;
+                console.log("Auth.getCurrentUser: ", Auth.getCurrentUser());
+                console.log("events: ", events);
 
             }, function (error) {
                 console.error(error);
@@ -52,15 +48,6 @@ angular.module('schoolPlannerApp')
             }
         }
 
-
-// $scope.events = [
-//       {title: 'All Day Event',start: new Date(y, m, 1)},
-//       {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-//       {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-//       {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-//       {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-//       {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
-//     ];
         $scope.changeTo = 'Hungarian';
         /* event source that pulls from google.com */
         $scope.eventSource = {
