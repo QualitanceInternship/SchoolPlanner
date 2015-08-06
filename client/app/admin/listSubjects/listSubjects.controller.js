@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('schoolPlannerApp')
-    .controller('ListSubjCtrl', function ($scope, $http, socket, $location) {
+    .controller('ListSubjCtrl', function ($scope, $http, socket, $location, createModal) {
         $scope.allSubjects = [];
 
         $http.get('/api/subjects').success(function (allSubjects) {
@@ -19,5 +19,9 @@ angular.module('schoolPlannerApp')
 
         $scope.goTo = function (path) {
             $location.path(path);
+        }
+
+        $scope.createNew = function(event) {
+            createModal.showModal($scope.allSubjects, event, null, $scope, 'subject');
         }
     });

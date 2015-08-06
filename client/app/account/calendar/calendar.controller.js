@@ -3,7 +3,9 @@ angular.module('schoolPlannerApp')
     .controller('CalendarCtrl',
     function ($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog, createModal) {
         $scope.events = [];
-
+        $scope.createNew = function(event) {
+            alert();
+        }
         $scope.newEvents = [];
         var date = new Date();
         var d = date.getDate();

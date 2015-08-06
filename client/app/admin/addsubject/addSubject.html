@@ -1,23 +1,22 @@
 
 <header>
-<h1 align="center"> Add subject </h1>
-<h3 align="center" ng-show="saved"> Sucesfully saved</h3>
+  <h1 align="center"> Add subject </h1>
+  <h3 align="center" ng-show="saved"> Sucesfully saved</h3>
 </header>
 
-<div style="padding:50px;">
 <div layout="column">
   <md-content>
     <md-input-container>
       <label>Faculty</label>
       <input ng-model="newSubject.faculty" type="text">
     </md-input-container>
-    </md-content>
-    <md-content>
+  </md-content>
+  <md-content>
     <md-input-container>
       <label>Year</label>
       <input ng-model="newSubject.year" type="text">
     </md-input-container>
-</md-content>
+  </md-content>
   
   <md-content layout-padding>
     <form name="userForm">
@@ -39,8 +38,7 @@
      
     </form>
   </md-content>
-</div>
 <div align="center">
        <md-button class="md-raised md-warn" ng-click="addSubject()" type="submit">Save</md-button>
 </div>
- 
+ </div>
