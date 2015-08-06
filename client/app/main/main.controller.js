@@ -1,27 +1,31 @@
 'use strict';
 
 angular.module('schoolPlannerApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, Auth, $location, $window) {
+    $scope.user = {};
+    $scope.errors = {};
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
-    });
+    $scope.login = function(form) {
+      $scope.submitted = true;
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
+      if(form.$valid) {
+        Auth.login({
+          email: $scope.user.email,
+          password: $scope.user.password
+        })
+        .then( function() {
+          // Logged in, redirect to home
+          if($scope.user.email==="admin@admin.com" && $scope.user.password=="admin"){
+          $location.path('/admin');}
+          else $location.path('/');
+        })
+        .catch( function(err) {
+          $scope.errors.other = err.message;
+        });
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.loginOauth = function(provider) {
+      $window.location.href = '/auth/' + provider;
     };
-
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
-    });
   });

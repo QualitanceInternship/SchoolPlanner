@@ -1,30 +1,68 @@
-<md-toolbar layout="row" class="md-whiteframe-z1 nav-colour" ng-controller="NavbarCtrl">
+ 
+<md-toolbar  class="md-whiteframe-z1 nav-colour" ng-controller="NavbarCtrl" >
 
-    <md-button class="menu" ng-if='isLoggedIn()' hide-gt-sm ng-click="toggleList()" aria-label="Show User List">
-        <md-icon ng-if='isLoggedIn()' md-svg-icon="assets/images/menu.svg"></md-icon>
+  <div class="md-toolbar-tools" ng-if="isLoggedIn()">
+
+        <md-button class="menu" hide-gt-sm ng-click="toggleList()" aria-label="Show User List">
+        <md-icon md-svg-icon="assets/images/menu.svg" ></md-icon>
+      </md-button>
+
+      <span href="/calendar" hide show-gt-sm >School Planner</span>
+      
+      <span flex></span>
+
+      <md-button  href="/universities" hide show-gt-sm >
+      Universities
     </md-button>
 
-    <md-button class=class="md-icon-button" href="/" hide show-gt-sm>School Planner</md-button>
-    <span flex></span>
+    <md-button href="/calendar" hide show-gt-sm >
+    Calendar
+  </md-button>
 
-    <md-list-item ng-if="isLoggedIn()">
-        <md-button href="/universities" hide show-gt-sm>Universities</md-button>
-    </md-list-item>
 
-    <md-list-item ng-if="isLoggedIn()">
-        <md-button href="/" hide show-gt-sm>Calendar</md-button>
-    </md-list-item>
+  
 
-    <md-button ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" href="/login">Login</md-button>
-    <md-button ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" href="/signup">Signup</md-button>
+   
 
-    <md-list-item>
-        <md-button ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" href="" ng-click="logout()">Logout
+  
+ <img src="assets/images/profile.png" height="35" width="40" > 
+ 
+
+ <!--  <md-button class="md-icon-button" aria-label="More">
+  <md-icon md-svg-icon="assets/images/more-vert.svg"></md-icon>
+  </md-button> -->
+  <md-menu md-position-mode="target-right target">
+        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+            <md-icon md-menu-origin md-svg-icon="assets/images/more-vert.svg"></md-icon>
         </md-button>
 
-        <md-button ng-if="isLoggedIn()"  href="/settings">
-            <img src="assets/images/profile.png" height="35" width="40">
-        </md-button>
-    </md-list-item>
+        <md-menu-content width="4">
+          <md-menu-item>
 
-</md-toolbar>
+          <md-button     href="" ng-click="logout()">
+                Logout
+               </md-button> 
+            </md-menu-item>
+
+            <md-menu-item>
+
+              <md-button    href="/settings" >
+                Profile
+               </md-button> 
+            </md-menu-item>
+
+        </md-menu-content>
+     </md-menu>
+  
+   
+
+
+
+
+  </div>
+  </md-toolbar>
+ 
+
+
+
+ 

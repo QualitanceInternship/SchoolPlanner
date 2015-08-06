@@ -40,3 +40,12 @@
   width: 100%;
   opacity: 0.3;
 }
+.placeholder {
+   color: #FF80AB;
+ }
+ .container_overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.3;}

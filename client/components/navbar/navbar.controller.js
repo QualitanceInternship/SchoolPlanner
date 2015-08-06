@@ -18,7 +18,7 @@ angular.module('schoolPlannerApp')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/');
     };
       function toggleUsersList()
       {
@@ -28,4 +28,14 @@ angular.module('schoolPlannerApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
+    $scope.status = {
+    isopen: false
+     };
+
+     $scope.toggleDropdown = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope.status.isopen = !$scope.status.isopen;
+  };
   });

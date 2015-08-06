@@ -10,8 +10,11 @@ angular.module('schoolPlannerApp')
 
       if(form.$valid) {
         Auth.createUser({
+
           name: $scope.user.name,
           email: $scope.user.email,
+          year: $scope.user.year,
+          group: $scope.user.group,
           password: $scope.user.password
         })
         .then( function() {

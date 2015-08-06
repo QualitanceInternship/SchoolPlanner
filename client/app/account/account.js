@@ -14,7 +14,7 @@ angular.module('schoolPlannerApp')
         controller: 'SignupCtrl'
       })
       .state('calendar', {
-        url: '/',
+        url: '/calendar',
         templateUrl: 'app/account/calendar/calendar.html',
         controller: 'CalendarCtrl'
       })

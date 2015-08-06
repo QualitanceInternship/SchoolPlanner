@@ -39,6 +39,12 @@
 .nav-colour{
  background-color: #009688 ;
 }
-.sidenav-colour {
-    background-color: #80CBC4;
-}
+.sidenav-colour{
+ background-color: #80CBC4 ;
+ 
+.container_overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.3;}
