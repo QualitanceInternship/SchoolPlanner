@@ -15,9 +15,10 @@ angular.module('schoolPlannerApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          if($scope.user.email==="admin@admin.com" && $scope.user.password=="admin"){
-          $location.path('/admin');}
-          else $location.path('/');
+          //if($scope.user.email==="admin@admin.com" && $scope.user.password=="admin"){
+          //$location.path('/admin');}
+          //else
+            $location.path('/');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

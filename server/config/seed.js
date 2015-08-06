@@ -11,6 +11,7 @@ var User = require('../api/user/user.model');
 var Faculty = require('../api/faculty/faculty.model');
 var Subject = require('../api/subject/subject.model');
 var University = require('../api/university/university.model');
+var Event = require('../api/event/event.model');
 
 var date = new Date();
 var d = date.getDate();
