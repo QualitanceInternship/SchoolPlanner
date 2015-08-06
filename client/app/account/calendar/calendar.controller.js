@@ -1,7 +1,7 @@
 angular.module('schoolPlannerApp')
 
 .controller('CalendarCtrl',
-   function($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog) {
+   function($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog, Auth) {
     $scope.events = [];
 
     $scope.newEvents = [];
@@ -10,19 +10,17 @@ angular.module('schoolPlannerApp')
     var m = date.getMonth();
     var y = date.getFullYear();
 
-    calendarFactory.getEvents()
-    .then(function (events) {
-      $scope.events = events;
+calendarFactory.getMyEvents()
+   .then(function (events) {
+    $scope.events = events;
+    $scope.eventSources[0] = events;
+    console.log("Auth.getCurrentUser: ", Auth.getCurrentUser());
+        console.log("events: ", events);
 
-      for(j=0; j<$scope.events.length; j++)
-        arraynou($scope.events[j]);
-
-      $scope.eventSources[0] = $scope.newEvents;
-
-        }, function (error) {
-      console.error(error);
+  }, function (error) {
+    console.error(error);
   });
-
+// $sc
 function arraynou(eventt){
     for(i=0; i < eventt.noocc; i++){
       var sdate = new Date(eventt.start);
