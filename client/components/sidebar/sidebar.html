@@ -1,22 +1,29 @@
 <md-toolbar class="md-whiteframe-z1 nav-colour" style="top:0">
-    <h2> School Planner</h2>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman" height="80" width="80">
+    <div layout="column" layout-align="center center" layout-padding layout-margin>
+
+        <img src="assets/images/logo.png">
+        <span>School Planner</span>
+    </div>
 </md-toolbar>
 
-<md-content flex role="navigation">
+<md-content flex role="navigation"  >
     <div width="4" class="md-default-theme" style=" background-color: #80CBC4 ;">
-        <md-menu-item ng-if="isLoggedIn()">
-            <button ng-click="goTo('/universities');" class="md-button " md-ink-ripple tabindex="0">
-                <span><h3> UNIVERSITIES </h3></span>
-                <div class="md-ripple-container"></div>
-            </button>
+        <md-menu-item>
+
+            <md-button ng-click="goTo('/universities');"style="color: white;">UNIVERSITIES </md-button>
+
+
         </md-menu-item>
-        <md-menu-divider></md-menu-divider>
-        <md-menu-item ng-if="isLoggedIn()">
-            <button ng-click="goTo('/');" class="md-button " md-ink-ripple tabindex="0">
-            <span><h3> CALENDAR </h3></span>
-                <div class="md-ripple-container"></div>
-            </button>
+
+        <md-menu-item>
+
+            <md-button flex ng-click="goTo('/');" style="color: white;">ORAR </md-button>
+
         </md-menu-item>
+        <md-menu-item>
+
+            <md-button ng-click="goTo('/settings');"style="color: white;">PROFILE </md-button>
+        </md-menu-item>
+
     </div>
 </md-content>
