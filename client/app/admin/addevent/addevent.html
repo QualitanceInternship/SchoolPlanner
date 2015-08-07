@@ -1,4 +1,4 @@
-<div ng-controller="CalendarCtrl">
+<div ng-controller="AddEventCtrl">
     <h1 align="center"> Add event </h1>
     <h3 align="center" style="color:red" ng-show="saved"> Sucesfully saved</h3>
 
@@ -33,21 +33,6 @@
                 <form name="userForm">
 
                     <div layout layout-sm="column">
-                        <!--<md-input-container flex>-->
-                            <!--<md-select ng-model="newEvent.faculty" placeholder="Faculty">-->
-                                <!--<md-option ng-repeat="faculty in faculties" value="{{faculty}}">{{faculty}}</md-option>-->
-                            <!--</md-select>-->
-                        <!--</md-input-container>-->
-
-
-                        <!--<md-input-container flex>-->
-                            <!--<md-select ng-model="newEvent.series" placeholder="Series">-->
-                                <!--<md-option ng-repeat="ser in sers" value="{{ser}}">{{ser}}</md-option>-->
-                            <!--</md-select>-->
-                        <!--</md-input-container>-->
-
-
-
                         <md-content>
                             <md-input-container flex>
                                 <label>Group</label>
@@ -59,14 +44,6 @@
 
 
                     <div layout layout-sm="column">
-                        <!--<md-input-container flex>-->
-
-                            <!--<md-select ng-model="newEvent.year" placeholder="Year">-->
-                                <!--<md-option ng-repeat="year in years" value="{{year}}">{{year}}</md-option>-->
-                            <!--</md-select>-->
-                        <!--</md-input-container>-->
-
-
                         <md-input-container flex>
                             <md-select ng-model="newEvent.freq" placeholder="Frequency">
                                 <md-option ng-repeat="freq in freqs" value="{{freq}}">{{freq}}</md-option>

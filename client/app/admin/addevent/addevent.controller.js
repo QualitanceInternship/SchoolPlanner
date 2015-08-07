@@ -13,7 +13,6 @@ angular.module('schoolPlannerApp')
         $scope.faculties = ['Electronica', 'Automatica', 'Energetica', 'Electric', 'Faima', 'Mecatronica'];
         $scope.groups = ['101', '102', '103', '121', '321', '423', '335', '1021', '425', '421B'];
 
-
         $http.get('/api/events').success(function (allEvents) {
             $scope.allEvents = allEvents;
             socket.syncUpdates('event', $scope.allEvents);
@@ -27,10 +26,6 @@ angular.module('schoolPlannerApp')
 
             $scope.newEvent.start = new Date($scope.newEvent.start.setHours($scope.shour));
             $scope.newEvent.end = new Date($scope.newEvent.end.setHours($scope.ehour));
-
-            console.log($scope.newEvent.start);
-            console.log($scope.newEvent.end);
-
 
             $http.post('/api/events', {
 

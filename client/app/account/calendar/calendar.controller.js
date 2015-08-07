@@ -14,23 +14,36 @@ angular.module('schoolPlannerApp')
             createModal.showModal(null, event, null, $scope, 'event');
 
         }
-        $rootScope.$on('createdEvent', function(event, newEvent) {
-            $scope.events.push(newEvent);
-            arraynou(newEvent);
+        $rootScope.$on('createdEvent', function(event) {
+            getMyEventsFormated();
         });
-        calendarFactory.getMyEvents()
-            .then(function (events) {
-                $scope.events = events;
-                $scope.eventSources[0] = events;
-                console.log("Auth.getCurrentUser: ", Auth.getCurrentUser());
-                console.log("events: ", events);
 
-            }, function (error) {
-                console.error(error);
-            });
+        function getMyEventsFormated() {
+            calendarFactory.getMyEvents()
+                .then(function (events) {
+                    $scope.events = events;
+
+                    console.log("Auth.getCurrentUser: ", Auth.getCurrentUser());
+                    console.log("events: ", events);
+
+                    for(j=0; j<$scope.events.length; j++){
+                        arraynou($scope.events[j]);
+                    }
+                    $timeout(function() {
+                        $scope.eventSources[0] = $scope.newEvents;
+                        console.log('Formated Events: ', $scope.eventSources[0]);
+                    }, 300);
+
+                }, function (error) {
+                    console.error(error);
+                });
+        }
+        getMyEventsFormated();
 
         function arraynou(eventt) {
             for (i = 0; i < eventt.noocc; i++) {
+                var newEv = angular.copy(eventt);
+
                 var sdate = new Date(eventt.start);
 
                 var sd = sdate.getDate();
@@ -46,9 +59,7 @@ angular.module('schoolPlannerApp')
                 var eh = edate.getHours();
                 var emn = edate.getMinutes();
 
-                var newEv = [];
 
-                newEv = eventt;
                 newEv.start = new Date(sy, sm, sd + eventt.freq * i * 7, sh, smn);
                 newEv.end = new Date(ey, em, ed + eventt.freq * i * 7, eh, emn);
 
