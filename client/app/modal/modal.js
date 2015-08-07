@@ -4,7 +4,6 @@ angular.module('schoolPlannerApp')
 
         return {
             showModal: function showDialog(date, jsEvent, view, $scope, viewType) {
-                console.log(viewType);
                 var parentEl = angular.element(document.body);
                 $mdDialog.show({
                     parent: parentEl,
@@ -16,10 +15,7 @@ angular.module('schoolPlannerApp')
                     controller: DialogController
                 });
                 function DialogController($scope, $mdDialog, items) {
-
                     $scope.show = function (elem)  {
-                        console.log(elem, ' ', viewType);
-
                         return elem === viewType;
                     };
                     $scope.items = angular.copy(items);

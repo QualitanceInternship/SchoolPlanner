@@ -20,7 +20,7 @@
     
   
       $http.post('/api/universities', { name: $scope.newUniversity.name,
-      								                  description: $scope.newUniversity.description,
+                                          description: $scope.newUniversity.description,
                                   		  faculties: $scope.newUniversity.faculty,
                                   		  active: true
 

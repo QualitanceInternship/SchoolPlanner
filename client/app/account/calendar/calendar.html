@@ -1,6 +1,5 @@
 <md-content class="md-padding" style="
-    background: transparent;
-">
+    background: transparent;">
     <h1>Orar</h1>
 
     <div layout="row" layout-align="center center" layout-margin>
@@ -13,8 +12,12 @@
             <md-card>
                 <md-card-content>
                     <h2 class="md-title">Orar</h2>
-
-                    <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
+                    <div layout layout-align="center center" >
+                        <md-button class="buttoncolor" ng-click="changeView('agendaDay', 'myCalendar1')">Day</md-button>
+                        <md-button class="buttoncolor" ng-click="changeView('agendaWeek', 'myCalendar1')">Week</md-button>
+                        <md-button class="buttoncolor" ng-click="changeView('month', 'myCalendar1')">Month</md-button>
+                    </div>
+                    <div ui-calendar="uiConfig.calendar" class="span8 calendar" calendar="myCalendar1" ng-model="eventSources"></div>
                 </md-card-content>
             </md-card>
         </div>
