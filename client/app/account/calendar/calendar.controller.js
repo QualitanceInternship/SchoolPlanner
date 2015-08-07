@@ -15,10 +15,10 @@ angular.module('schoolPlannerApp')
 
         }
         $rootScope.$on('createdEvent', function(event) {
-            getMyEventsFormated();
+            $scope.getMyEventsFormated();
         });
 
-        function getMyEventsFormated() {
+        $scope.getMyEventsFormated = function getMyEventsFormated() {
             calendarFactory.getMyEvents()
                 .then(function (events) {
                     $scope.events = events;
@@ -38,7 +38,11 @@ angular.module('schoolPlannerApp')
                     console.error(error);
                 });
         }
-        getMyEventsFormated();
+
+        $timeout(function() {
+            $scope.getMyEventsFormated();
+        }, 500);
+
 
         function arraynou(eventt) {
             for (i = 0; i < eventt.noocc; i++) {
