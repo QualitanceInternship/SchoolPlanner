@@ -85,8 +85,11 @@ Event.find({}).remove(function() {
             noocc: 2,
             sala: 'Sala F100',
             description: 'Ne pregatim pentru test'
-        });
-    });
+        }, function() {
+            console.log('finished populating events');
+        }
+    );
+});
 
     University.find({}).remove(function() {
         University.create({
@@ -138,8 +141,9 @@ Event.find({}).remove(function() {
             professors: ['Ungureanu','Burileanu'],
             subjects: [],
             university: 'Politehnica Bucuresti'
-        });
-    });
+        }
+    );
+});
 
 
 User.find({}).remove(function() {

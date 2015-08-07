@@ -1,7 +1,7 @@
 angular.module('schoolPlannerApp')
 
     .controller('CalendarCtrl',
-    function ($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog, Auth, createModal) {
+    function ($scope, $compile, $timeout, uiCalendarConfig, calendarFactory, $mdDialog, Auth, createModal, $rootScope) {
         $scope.events = [];
 
         $scope.newEvents = [];
@@ -14,7 +14,10 @@ angular.module('schoolPlannerApp')
             createModal.showModal(null, event, null, $scope, 'event');
 
         }
-
+        $rootScope.$on('createdEvent', function(event, newEvent) {
+            $scope.events.push(newEvent);
+            arraynou(newEvent);
+        });
         calendarFactory.getMyEvents()
             .then(function (events) {
                 $scope.events = events;

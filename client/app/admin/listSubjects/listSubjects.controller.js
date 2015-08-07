@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('schoolPlannerApp')
-    .controller('ListSubjCtrl', function ($scope, $http, socket, $location, createModal) {
+    .controller('ListSubjCtrl', function ($scope, $http, socket, $location, createModal, $rootScope, $state) {
 
         $scope.allSubjects = [];
 
@@ -22,6 +22,11 @@ angular.module('schoolPlannerApp')
             $location.path(path);
         }
 
+        $scope.goToDetails = function (index) {
+            $rootScope.detailItem = $scope.allSubjects[index];
+            $rootScope.image = 'assets/images/specifiers.jpg';
+            $state.go('details');
+        }
         $scope.createNew = function(event) {
             createModal.showModal($scope.allSubjects, event, null, $scope, 'subject');
         }

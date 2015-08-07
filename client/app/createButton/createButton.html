@@ -1,4 +1,4 @@
-<div layout= "row">
+<div layout= "row"  ng-if="isAdmin()">
     <span flex> </span>
     <md-button style = "position:absolute;right:50px; top:0px; font-weight: bold;" class="md-fab md-warn md-hue-2 newJob" aria-label="Profile"
         ng-show="isLoggedIn()" ng-click="createNew($event)"> +

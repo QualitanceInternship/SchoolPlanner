@@ -9,18 +9,16 @@
 
         <md-card layout="row" layout-align="center center">
             <md-card>
-                <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                <img ng-src={{image}} class="md-card-image" alt="Washed Out">
                 <md-card-content>
-                    <h2 class="md-title">ETTI</h2>
+                    <h2 class="md-title">{{detailItem.name}}</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at lacus tincidunt, luctus
-                        turpis convallis, feugiat diam. Maecenas enim lectus, condimentum ac tincidunt eu, dapibus ac
-                        eros.
+                        {{detailItem.description}}
                     </p>
                 </md-card-content>
 
                 <div class="md-actions" layout="row" layout-align="end center">
-                    <md-button ng-click="goTo('/listSubjects')"> Materii </md-button>
+                    <md-button ng-click="goBack()"> Back </md-button>
 
                 </div>
             </md-card>

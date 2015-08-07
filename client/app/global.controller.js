@@ -7,4 +7,5 @@ angular.module('schoolPlannerApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+      console.log('$scope.isAdmin: ', $scope.isAdmin());
   });

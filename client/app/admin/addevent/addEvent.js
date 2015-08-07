@@ -4,7 +4,7 @@
 angular.module('schoolPlannerApp').directive('createEvent', function () {
     return {
         restrict:'E',
-        controller: 'AddSubjectCtrl',
+        controller: 'AddEventCtrl',
         templateUrl: 'app/admin/addevent/addevent.html'
     };
 });
