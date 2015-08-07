@@ -13,7 +13,7 @@ angular.module('schoolPlannerApp')
         $rootScope.$on('createdFaculty', function(event, newFaculty) {
             console.log('createdFaculty: ', newFaculty);
             $scope.faculties.push(newFaculty);
-        })
+        });
 
         $scope.createNew = function (event) {
             createModal.showModal(null, event, null, $scope, 'faculty');
